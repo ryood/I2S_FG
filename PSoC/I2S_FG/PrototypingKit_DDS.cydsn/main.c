@@ -7,15 +7,17 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.01.31 24bit/384kHz 
+ *
  * ========================================
 */
 #include <project.h>
 #include "wavetable.h"
 
-#define SAMPLE_CLOCK    384000u
+#define SAMPLE_CLOCK    382000u
 
 #define TABLE_SIZE      1024
-#define BUFFER_SIZE     16     
+#define BUFFER_SIZE     3     
 
 /* Defines for DMA_0 */
 #define DMA_0_BYTES_PER_BURST 1
@@ -74,7 +76,7 @@ void generateWave_0()
     uint8* p8;
     
     // 波形をバッファに転送
-    for (i = 0; i < BUFFER_SIZE; i+=2) {
+    for (i = 0; i < BUFFER_SIZE; i+=3) {
         phaseRegister_0 += tuningWord_0;
         index = phaseRegister_0 >> 22;
         
@@ -83,6 +85,7 @@ void generateWave_0()
         //p8 = (uint8 *)(&v);
         waveBuffer_0[i]   = *(p8 + 1);
         waveBuffer_0[i+1] = *p8;
+        waveBuffer_0[i+2] = 0;
     }
     
 }
