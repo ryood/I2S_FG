@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.278ms
+Loading plugins phase: Elapsed time ==> 0s.277ms
 Initializing data phase: Elapsed time ==> 0s.000ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_DDS.cydsn\PrototypingKit_DDS.cyprj -d CY8C5888LTI-LP097 -s D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_DDS.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 1s.630ms
+Elaboration phase: Elapsed time ==> 1s.611ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.042ms
+HDL generation phase: Elapsed time ==> 0s.041ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -41,7 +41,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\gizmo
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Sun Jan 31 15:11:40 2016
+Sun Jan 31 15:17:37 2016
 
 
 ======================================================================
@@ -51,7 +51,7 @@ Options  :    -yv2 -q10 PrototypingKit_DDS.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Sun Jan 31 15:11:40 2016
+Sun Jan 31 15:17:37 2016
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bI2S_v2_60\bI2S_v2_60.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
@@ -99,7 +99,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\gizmo
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Sun Jan 31 15:11:40 2016
+Sun Jan 31 15:17:38 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -130,7 +130,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\gizmo
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Sun Jan 31 15:11:40 2016
+Sun Jan 31 15:17:38 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -162,9 +162,6 @@ Detecting unused logic.
 	\I2S_1:bI2S:rx_lch_active\
 	\I2S_1:bI2S:rx_rch_active\
 	\I2S_1:bI2S:rx_stereo_data\
-	\I2S_1:bI2S:data_width_32\
-	\I2S_1:bI2S:tx_lch_load_3\
-	\I2S_1:bI2S:tx_rch_load_3\
 	\I2S_1:bI2S:rx_lch_load_3\
 	\I2S_1:bI2S:rx_lch_load_2\
 	\I2S_1:bI2S:rx_lch_load_1\
@@ -174,7 +171,6 @@ Detecting unused logic.
 	\I2S_1:bI2S:rx_rch_load_1\
 	\I2S_1:bI2S:rx_rch_load_0\
 	\I2S_1:bI2S:data_trunc\
-	\I2S_1:bI2S:tx_swap_done\
 	\I2S_1:Net_1_0\
 	\I2S_1:rx_line_0\
 	\I2S_1:Net_1_1\
@@ -214,7 +210,7 @@ Detecting unused logic.
 	Net_66_0
 
 
-Deleted 56 User equations/components.
+Deleted 52 User equations/components.
 Deleted 0 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -225,6 +221,8 @@ Aliasing \I2S_1:bI2S:tx_rch_active\ to one
 Aliasing \I2S_1:bI2S:data_width_8\ to one
 Aliasing \I2S_1:bI2S:data_width_16\ to one
 Aliasing \I2S_1:bI2S:data_width_24\ to one
+Aliasing \I2S_1:bI2S:data_width_32\ to one
+Aliasing \I2S_1:bI2S:tx_swap_done\ to one
 Aliasing \I2S_1:bI2S:Tx:STS[0]:status_5\ to zero
 Aliasing \I2S_1:bI2S:Tx:STS[0]:status_4\ to zero
 Aliasing \I2S_1:bI2S:Tx:STS[0]:status_3\ to zero
@@ -272,12 +270,16 @@ Removing Lhs of wire \I2S_1:bI2S:tx_rch_active\[30] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:data_width_8\[35] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:data_width_16\[36] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:data_width_24\[37] = one[2]
+Removing Lhs of wire \I2S_1:bI2S:data_width_32\[38] = one[2]
+Removing Lhs of wire \I2S_1:bI2S:tx_lch_load_3\[39] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_lch_load_2\[40] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_lch_load_1\[41] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_lch_load_0\[42] = one[2]
+Removing Lhs of wire \I2S_1:bI2S:tx_rch_load_3\[43] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_rch_load_2\[44] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_rch_load_1\[45] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:tx_rch_load_0\[46] = one[2]
+Removing Lhs of wire \I2S_1:bI2S:tx_swap_done\[61] = one[2]
 Removing Lhs of wire \I2S_1:bI2S:Tx:STS[0]:status_0\[65] = \I2S_1:bI2S:tx_underflow_0\[57]
 Removing Lhs of wire \I2S_1:bI2S:Tx:STS[0]:status_1\[66] = \I2S_1:bI2S:tx_f0_n_full_0\[67]
 Removing Lhs of wire \I2S_1:bI2S:Tx:STS[0]:status_2\[68] = \I2S_1:bI2S:tx_f1_n_full_0\[69]
@@ -333,7 +335,7 @@ Removing Lhs of wire Net_161D[322] = zero[9]
 Removing Lhs of wire Net_162D[323] = zero[9]
 
 ------------------------------------------------------
-Aliased 0 equations, 68 wires.
+Aliased 0 equations, 72 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -381,14 +383,14 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_DDS.cydsn\PrototypingKit_DDS.cyprj -dcpsoc3 PrototypingKit_DDS.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.580ms
+Warp synthesis phase: Elapsed time ==> 0s.550ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.3.0.410, Family: PSoC3, Started at: Sunday, 31 January 2016 15:11:40
+cyp3fit: V3.3.0.410, Family: PSoC3, Started at: Sunday, 31 January 2016 15:17:38
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_DDS.cydsn\PrototypingKit_DDS.cyprj -d CY8C5888LTI-LP097 PrototypingKit_DDS.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.019ms
+Design parsing phase: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -1034,17 +1036,14 @@ Design Equations
         Output = \I2S_1:bI2S:reset\ (fanout=1)
 
     MacroCell: Name=Net_4, Mode=(D-Register)
-        Total # of inputs        : 4
-        Total # of product terms : 2
+        Total # of inputs        : 2
+        Total # of product terms : 1
         List of special equations: 
             Clock  = (Net_22) => Global
             Clock Enable: True
-        Main Equation            : 2 pterms
+        Main Equation            : 1 pterm
         (
-              !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\ * 
-              !\I2S_1:bI2S:count_5\
-            + !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\ * 
-              !\I2S_1:bI2S:count_4\
+              !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\
         );
         Output = Net_4 (fanout=1)
 
@@ -1097,21 +1096,16 @@ Design Equations
         Output = \I2S_1:bI2S:txenable\ (fanout=4)
 
     MacroCell: Name=\I2S_1:bI2S:tx_state_2\, Mode=(D-Register)
-        Total # of inputs        : 10
-        Total # of product terms : 4
+        Total # of inputs        : 8
+        Total # of product terms : 3
         List of special equations: 
             Clock  = (Net_22) => Global
             Clock Enable: True
-        Main Equation            : 4 pterms
+        Main Equation            : 3 pterms
         (
-              !\I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + !\I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_4\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
+              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
+              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
+              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\
             + !\I2S_1:bI2S:txenable\
             + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
               !\I2S_1:bI2S:tx_state_0\
@@ -1119,19 +1113,16 @@ Design Equations
         Output = \I2S_1:bI2S:tx_state_2\ (fanout=6)
 
     MacroCell: Name=\I2S_1:bI2S:tx_state_1\, Mode=(D-Register)
-        Total # of inputs        : 9
-        Total # of product terms : 5
+        Total # of inputs        : 7
+        Total # of product terms : 4
         List of special equations: 
             Clock  = (Net_22) => Global
             Clock Enable: True
-        Main Equation            : 5 pterms
+        Main Equation            : 4 pterms
         !(
-              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
-              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
-              \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\
-            + !\I2S_1:bI2S:count_5\ * \I2S_1:bI2S:count_3\ * 
-              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
-              \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\
+              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
+              \I2S_1:bI2S:count_1\ * \I2S_1:bI2S:txenable\ * 
+              !\I2S_1:bI2S:tx_state_2\
             + \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\ * 
               \I2S_1:bI2S:tx_state_0\
             + \I2S_1:bI2S:txenable\ * \I2S_1:bI2S:tx_state_2\ * 
@@ -1141,21 +1132,16 @@ Design Equations
         Output = \I2S_1:bI2S:tx_state_1\ (fanout=6)
 
     MacroCell: Name=\I2S_1:bI2S:tx_state_0\, Mode=(D-Register)
-        Total # of inputs        : 10
-        Total # of product terms : 5
+        Total # of inputs        : 8
+        Total # of product terms : 4
         List of special equations: 
             Clock  = (Net_22) => Global
             Clock Enable: True
-        Main Equation            : 5 pterms
+        Main Equation            : 4 pterms
         (
-              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_4\ * \I2S_1:bI2S:count_3\ * 
+              \I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
               \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
               !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\
-            + \I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
             + !\I2S_1:bI2S:txenable\
             + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
               !\I2S_1:bI2S:tx_state_0\
@@ -1380,7 +1366,7 @@ Design Equations
         {
             cy_alt_mode = 0
             cy_init_value = "0000000"
-            cy_period = "1011111"
+            cy_period = "1111111"
             cy_route_en = 1
             cy_route_ld = 0
         }
@@ -1468,8 +1454,8 @@ DMA Channels                  :    2 :   22 :   24 :  8.33 %
 Timer                         :    0 :    4 :    4 :  0.00 %
 UDB                           :      :      :      :        
   Macrocells                  :   13 :  179 :  192 :  6.77 %
-  Unique P-terms              :   34 :  350 :  384 :  8.85 %
-  Total P-terms               :   36 :      :      :        
+  Unique P-terms              :   30 :  354 :  384 :  7.81 %
+  Total P-terms               :   32 :      :      :        
   Datapath Cells              :    1 :   23 :   24 :  4.17 %
   Status Cells                :    3 :   21 :   24 : 12.50 %
     StatusI Registers         :    1 :      :      :        
@@ -1487,8 +1473,8 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    0 :    4 :    4 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.052ms
-Tech mapping phase: Elapsed time ==> 0s.164ms
+Technology Mapping: Elapsed time ==> 0s.051ms
+Tech mapping phase: Elapsed time ==> 0s.130ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
@@ -1502,7 +1488,7 @@ IO_3@[IOP=(3)][IoId=(3)] : Pin_RE1_In(1) (fixed)
 IO_0@[IOP=(2)][IoId=(0)] : SCK_1(0) (fixed)
 IO_1@[IOP=(2)][IoId=(1)] : SDO_1(0) (fixed)
 IO_2@[IOP=(2)][IoId=(2)] : WS_1(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.018ms
+Analog Placement phase: Elapsed time ==> 0s.070ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 Analog Routing phase: Elapsed time ==> 0s.000ms
@@ -1520,11 +1506,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.445ms
+Analog Code Generation phase: Elapsed time ==> 0s.414ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.6 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1535,15 +1521,15 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :    9 :   39 :   48 :  18.75%
+                     PLDs :    8 :   40 :   48 :  16.67%
 
 <CYPRESSTAG name="PLD Statistics">
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            6.89
-                   Pterms :            4.00
-               Macrocells :            1.44
+                   Inputs :            5.25
+                   Pterms :            3.75
+               Macrocells :            1.63
 </CYPRESSTAG>
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
@@ -1558,10 +1544,10 @@ Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 Partitioning: Elapsed time ==> 0s.026ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
-Annealing: Elapsed time ==> 0s.001ms
+Annealing: Elapsed time ==> 0s.002ms
 <CYPRESSTAG name="Simulated Annealing Results">
 The seed used for moves was 114161200.
-Inital cost was 347, final cost is 347 (0.00% improvement).</CYPRESSTAG>
+Inital cost was 363, final cost is 363 (0.00% improvement).</CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1571,7 +1557,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          6 :       7.50 :       2.17
+                 UDB :          5 :       7.20 :       2.60
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -1579,12 +1565,31 @@ Final Placement Summary
 Component Placement Details
 ------------------------------------------------------------
 UDB [UDB=(0,0)] contents:
-LAB@[UDB=(0,0)][LB=0] #macrocells=1, #inputs=5, #pterms=2
+LAB@[UDB=(0,0)][LB=0] #macrocells=4, #inputs=11, #pterms=8
 {
-    [McSlotId=0]: (empty)
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=\I2S_1:bI2S:tx_underflow_0\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=0][MC=3]
+    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:tx_state_0\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=0]
+        Total # of inputs        : 8
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_22) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              \I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
+              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
+              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\
+            + !\I2S_1:bI2S:txenable\
+            + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
+              !\I2S_1:bI2S:tx_state_0\
+            + \I2S_1:bI2S:tx_state_2\ * \I2S_1:bI2S:tx_state_1\ * 
+              \I2S_1:bI2S:tx_state_0\
+        );
+        Output = \I2S_1:bI2S:tx_state_0\ (fanout=6)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\I2S_1:bI2S:tx_underflow_0\, Mode=(Combinatorial) @ [UDB=(0,0)][LB=0][MC=1]
         Total # of inputs        : 5
         Total # of product terms : 2
             Clock Enable: True
@@ -1599,12 +1604,46 @@ LAB@[UDB=(0,0)][LB=0] #macrocells=1, #inputs=5, #pterms=2
         Properties               : 
         {
         }
+
+    [McSlotId=2]:     MacroCell: Name=\I2S_1:bI2S:tx_state_2\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=2]
+        Total # of inputs        : 8
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (Net_22) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
+              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
+              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\
+            + !\I2S_1:bI2S:txenable\
+            + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
+              !\I2S_1:bI2S:tx_state_0\
+        );
+        Output = \I2S_1:bI2S:tx_state_2\ (fanout=6)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=\I2S_1:bI2S:reset\, Mode=(D-Register) @ [UDB=(0,0)][LB=0][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_22) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2S_1:bI2S:ctrl_2\
+        );
+        Output = \I2S_1:bI2S:reset\ (fanout=1)
+        Properties               : 
+        {
+        }
 }
 
 LAB@[UDB=(0,0)][LB=1] #macrocells=1, #inputs=3, #pterms=2
 {
-    [McSlotId=0]: (empty)
-    [McSlotId=1]:     MacroCell: Name=Net_5_0, Mode=(D-Register) @ [UDB=(0,0)][LB=1][MC=1]
+    [McSlotId=0]:     MacroCell: Name=Net_5_0, Mode=(D-Register) @ [UDB=(0,0)][LB=1][MC=0]
         Total # of inputs        : 3
         Total # of product terms : 2
         List of special equations: 
@@ -1620,36 +1659,9 @@ LAB@[UDB=(0,0)][LB=1] #macrocells=1, #inputs=3, #pterms=2
         {
         }
 
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-UDB [UDB=(0,1)] contents:
-LAB@[UDB=(0,1)][LB=0] #macrocells=1, #inputs=7, #pterms=3
-{
-    [McSlotId=0]: (empty)
     [McSlotId=1]: (empty)
     [McSlotId=2]: (empty)
-    [McSlotId=3]:     MacroCell: Name=\I2S_1:bI2S:tx_underflow_sticky\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=3]
-        Total # of inputs        : 7
-        Total # of product terms : 3
-        List of special equations: 
-            Clock  = (Net_22) => Global
-            Clock Enable: True
-        Main Equation            : 3 pterms
-        (
-              \I2S_1:bI2S:ctrl_0\ * \I2S_1:bI2S:tx_underflow_sticky\
-            + \I2S_1:bI2S:ctrl_0\ * !\I2S_1:bI2S:tx_state_2\ * 
-              !\I2S_1:bI2S:tx_state_1\ * \I2S_1:bI2S:tx_state_0\ * 
-              \I2S_1:bI2S:tx_f0_empty_0\
-            + \I2S_1:bI2S:ctrl_0\ * \I2S_1:bI2S:tx_state_2\ * 
-              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\ * 
-              \I2S_1:bI2S:tx_f1_empty_0\
-        );
-        Output = \I2S_1:bI2S:tx_underflow_sticky\ (fanout=2)
-        Properties               : 
-        {
-        }
+    [McSlotId=3]: (empty)
 }
 
 datapathcell: Name =\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\
@@ -1706,132 +1718,32 @@ statusicell: Name =\I2S_1:bI2S:Tx:STS[0]:Sts\
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(0,2)] is empty.
-UDB [UDB=(0,3)] is empty.
-UDB [UDB=(0,4)] is empty.
-UDB [UDB=(0,5)] is empty.
-UDB [UDB=(1,0)] contents:
-LAB@[UDB=(1,0)][LB=0] #macrocells=3, #inputs=12, #pterms=8
-{
-    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:tx_state_1\, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=0]
-        Total # of inputs        : 9
-        Total # of product terms : 5
-        List of special equations: 
-            Clock  = (Net_22) => Global
-            Clock Enable: True
-        Main Equation            : 5 pterms
-        !(
-              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_3\ * 
-              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
-              \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\
-            + !\I2S_1:bI2S:count_5\ * \I2S_1:bI2S:count_3\ * 
-              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
-              \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\
-            + \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\ * 
-              \I2S_1:bI2S:tx_state_0\
-            + \I2S_1:bI2S:txenable\ * \I2S_1:bI2S:tx_state_2\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + \I2S_1:bI2S:txenable\ * \I2S_1:bI2S:tx_state_1\
-        );
-        Output = \I2S_1:bI2S:tx_state_1\ (fanout=6)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_4, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=1]
-        Total # of inputs        : 4
-        Total # of product terms : 2
-        List of special equations: 
-            Clock  = (Net_22) => Global
-            Clock Enable: True
-        Main Equation            : 2 pterms
-        (
-              !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\ * 
-              !\I2S_1:bI2S:count_5\
-            + !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\ * 
-              !\I2S_1:bI2S:count_4\
-        );
-        Output = Net_4 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=\I2S_1:bI2S:reset\, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=2]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_22) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              !\I2S_1:bI2S:ctrl_2\
-        );
-        Output = \I2S_1:bI2S:reset\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]: (empty)
-}
-
-LAB@[UDB=(1,0)][LB=1] #macrocells=1, #inputs=10, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:tx_state_2\, Mode=(D-Register) @ [UDB=(1,0)][LB=1][MC=0]
-        Total # of inputs        : 10
-        Total # of product terms : 4
-        List of special equations: 
-            Clock  = (Net_22) => Global
-            Clock Enable: True
-        Main Equation            : 4 pterms
-        (
-              !\I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + !\I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_4\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + !\I2S_1:bI2S:txenable\
-            + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-        );
-        Output = \I2S_1:bI2S:tx_state_2\ (fanout=6)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]: (empty)
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
-count7cell: Name =\I2S_1:bI2S:BitCounter\
+controlcell: Name =\I2S_1:bI2S:CtlReg\
     PORT MAP (
         clock => Net_22 ,
-        enable => \I2S_1:bI2S:ctrl_2\ ,
-        count_6 => \I2S_1:bI2S:count_6\ ,
-        count_5 => \I2S_1:bI2S:count_5\ ,
-        count_4 => \I2S_1:bI2S:count_4\ ,
-        count_3 => \I2S_1:bI2S:count_3\ ,
-        count_2 => \I2S_1:bI2S:count_2\ ,
-        count_1 => \I2S_1:bI2S:count_1\ ,
-        count_0 => Net_3 );
+        control_7 => \I2S_1:bI2S:ctrl_7\ ,
+        control_6 => \I2S_1:bI2S:ctrl_6\ ,
+        control_5 => \I2S_1:bI2S:ctrl_5\ ,
+        control_4 => \I2S_1:bI2S:ctrl_4\ ,
+        control_3 => \I2S_1:bI2S:ctrl_3\ ,
+        control_2 => \I2S_1:bI2S:ctrl_2\ ,
+        control_1 => \I2S_1:bI2S:ctrl_1\ ,
+        control_0 => \I2S_1:bI2S:ctrl_0\ );
     Properties:
     {
-        cy_alt_mode = 0
-        cy_init_value = "0000000"
-        cy_period = "1011111"
-        cy_route_en = 1
-        cy_route_ld = 0
+        cy_ctrl_mode_0 = "00011111"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00000000"
     }
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(1,1)] contents:
-LAB@[UDB=(1,1)][LB=0] #macrocells=1, #inputs=11, #pterms=8
+UDB [UDB=(0,1)] contents:
+LAB@[UDB=(0,1)][LB=0] #macrocells=1, #inputs=11, #pterms=8
 {
-    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:txenable\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:txenable\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=0]
         Total # of inputs        : 11
         Total # of product terms : 8
         List of special equations: 
@@ -1869,31 +1781,95 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=1, #inputs=11, #pterms=8
     [McSlotId=3]: (empty)
 }
 
-LAB@[UDB=(1,1)][LB=1] #macrocells=1, #inputs=10, #pterms=5
+LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=11, #pterms=7
 {
-    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:tx_state_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=0]
-        Total # of inputs        : 10
-        Total # of product terms : 5
+    [McSlotId=0]:     MacroCell: Name=\I2S_1:bI2S:tx_underflow_sticky\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=0]
+        Total # of inputs        : 7
+        Total # of product terms : 3
         List of special equations: 
             Clock  = (Net_22) => Global
             Clock Enable: True
-        Main Equation            : 5 pterms
+        Main Equation            : 3 pterms
         (
-              !\I2S_1:bI2S:count_6\ * \I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_4\ * \I2S_1:bI2S:count_3\ * 
-              \I2S_1:bI2S:count_2\ * \I2S_1:bI2S:count_1\ * 
-              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\
-            + \I2S_1:bI2S:count_6\ * !\I2S_1:bI2S:count_5\ * 
-              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
-              \I2S_1:bI2S:count_1\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + !\I2S_1:bI2S:txenable\
-            + \I2S_1:bI2S:tx_state_2\ * !\I2S_1:bI2S:tx_state_1\ * 
-              !\I2S_1:bI2S:tx_state_0\
-            + \I2S_1:bI2S:tx_state_2\ * \I2S_1:bI2S:tx_state_1\ * 
-              \I2S_1:bI2S:tx_state_0\
+              \I2S_1:bI2S:ctrl_0\ * \I2S_1:bI2S:tx_underflow_sticky\
+            + \I2S_1:bI2S:ctrl_0\ * !\I2S_1:bI2S:tx_state_2\ * 
+              !\I2S_1:bI2S:tx_state_1\ * \I2S_1:bI2S:tx_state_0\ * 
+              \I2S_1:bI2S:tx_f0_empty_0\
+            + \I2S_1:bI2S:ctrl_0\ * \I2S_1:bI2S:tx_state_2\ * 
+              !\I2S_1:bI2S:tx_state_1\ * !\I2S_1:bI2S:tx_state_0\ * 
+              \I2S_1:bI2S:tx_f1_empty_0\
         );
-        Output = \I2S_1:bI2S:tx_state_0\ (fanout=6)
+        Output = \I2S_1:bI2S:tx_underflow_sticky\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\I2S_1:bI2S:tx_state_1\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=1]
+        Total # of inputs        : 7
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_22) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        !(
+              \I2S_1:bI2S:count_3\ * \I2S_1:bI2S:count_2\ * 
+              \I2S_1:bI2S:count_1\ * \I2S_1:bI2S:txenable\ * 
+              !\I2S_1:bI2S:tx_state_2\
+            + \I2S_1:bI2S:txenable\ * !\I2S_1:bI2S:tx_state_2\ * 
+              \I2S_1:bI2S:tx_state_0\
+            + \I2S_1:bI2S:txenable\ * \I2S_1:bI2S:tx_state_2\ * 
+              !\I2S_1:bI2S:tx_state_0\
+            + \I2S_1:bI2S:txenable\ * \I2S_1:bI2S:tx_state_1\
+        );
+        Output = \I2S_1:bI2S:tx_state_1\ (fanout=6)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+count7cell: Name =\I2S_1:bI2S:BitCounter\
+    PORT MAP (
+        clock => Net_22 ,
+        enable => \I2S_1:bI2S:ctrl_2\ ,
+        count_6 => \I2S_1:bI2S:count_6\ ,
+        count_5 => \I2S_1:bI2S:count_5\ ,
+        count_4 => \I2S_1:bI2S:count_4\ ,
+        count_3 => \I2S_1:bI2S:count_3\ ,
+        count_2 => \I2S_1:bI2S:count_2\ ,
+        count_1 => \I2S_1:bI2S:count_1\ ,
+        count_0 => Net_3 );
+    Properties:
+    {
+        cy_alt_mode = 0
+        cy_init_value = "0000000"
+        cy_period = "1111111"
+        cy_route_en = 1
+        cy_route_ld = 0
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(0,2)] is empty.
+UDB [UDB=(0,3)] is empty.
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] contents:
+LAB@[UDB=(1,0)][LB=0] #macrocells=1, #inputs=2, #pterms=1
+{
+    [McSlotId=0]:     MacroCell: Name=Net_4, Mode=(D-Register) @ [UDB=(1,0)][LB=0][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_22) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2S_1:bI2S:reset\ * !\I2S_1:bI2S:count_6\
+        );
+        Output = Net_4 (fanout=1)
         Properties               : 
         {
         }
@@ -1903,125 +1879,9 @@ LAB@[UDB=(1,1)][LB=1] #macrocells=1, #inputs=10, #pterms=5
     [McSlotId=3]: (empty)
 }
 
-controlcell: Name =\I2S_1:bI2S:CtlReg\
-    PORT MAP (
-        clock => Net_22 ,
-        control_7 => \I2S_1:bI2S:ctrl_7\ ,
-        control_6 => \I2S_1:bI2S:ctrl_6\ ,
-        control_5 => \I2S_1:bI2S:ctrl_5\ ,
-        control_4 => \I2S_1:bI2S:ctrl_4\ ,
-        control_3 => \I2S_1:bI2S:ctrl_3\ ,
-        control_2 => \I2S_1:bI2S:ctrl_2\ ,
-        control_1 => \I2S_1:bI2S:ctrl_1\ ,
-        control_0 => \I2S_1:bI2S:ctrl_0\ );
-    Properties:
-    {
-        cy_ctrl_mode_0 = "00011111"
-        cy_ctrl_mode_1 = "00000000"
-        cy_ext_reset = 0
-        cy_force_order = 1
-        cy_init_value = "00000000"
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-UDB [UDB=(1,2)] is empty.
-UDB [UDB=(1,3)] is empty.
-UDB [UDB=(1,4)] is empty.
-UDB [UDB=(1,5)] is empty.
-UDB [UDB=(2,0)] contents:
-LAB@[UDB=(2,0)][LB=0] #macrocells=3, #inputs=3, #pterms=3
+LAB@[UDB=(1,0)][LB=1] #macrocells=1, #inputs=1, #pterms=1
 {
-    [McSlotId=0]:     MacroCell: Name=Net_132, Mode=(D-Register) @ [UDB=(2,0)][LB=0][MC=0]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_97) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_105_SYNCOUT
-        );
-        Output = Net_132 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_152, Mode=(D-Register) @ [UDB=(2,0)][LB=0][MC=1]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_97) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_151_SYNCOUT
-        );
-        Output = Net_152 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=Net_131, Mode=(D-Register) @ [UDB=(2,0)][LB=0][MC=2]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_97) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_96_SYNCOUT
-        );
-        Output = Net_131 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]: (empty)
-}
-
-synccell: Name =Pin_RE1_In(1)_SYNC
-    PORT MAP (
-        in => Net_151 ,
-        out => Net_151_SYNCOUT ,
-        clock => ClockBlock_BUS_CLK );
-    Properties:
-    {
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-synccell: Name =Pin_RE0_In(1)_SYNC
-    PORT MAP (
-        in => Net_105 ,
-        out => Net_105_SYNCOUT ,
-        clock => ClockBlock_BUS_CLK );
-    Properties:
-    {
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-synccell: Name =Pin_RE0_In(0)_SYNC
-    PORT MAP (
-        in => Net_96 ,
-        out => Net_96_SYNCOUT ,
-        clock => ClockBlock_BUS_CLK );
-    Properties:
-    {
-    }
-    Clock Polarity: Active High
-    Clock Enable: True
-
-UDB [UDB=(2,1)] is empty.
-UDB [UDB=(2,2)] is empty.
-UDB [UDB=(2,3)] is empty.
-UDB [UDB=(2,4)] is empty.
-UDB [UDB=(2,5)] is empty.
-UDB [UDB=(3,0)] contents:
-LAB@[UDB=(3,0)][LB=1] #macrocells=1, #inputs=1, #pterms=1
-{
-    [McSlotId=0]:     MacroCell: Name=Net_147, Mode=(D-Register) @ [UDB=(3,0)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=Net_147, Mode=(D-Register) @ [UDB=(1,0)][LB=1][MC=0]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -2052,7 +1912,110 @@ synccell: Name =Pin_RE1_In(0)_SYNC
     Clock Polarity: Active High
     Clock Enable: True
 
-UDB [UDB=(3,1)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] is empty.
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] contents:
+LAB@[UDB=(2,1)][LB=0] #macrocells=2, #inputs=2, #pterms=2
+{
+    [McSlotId=0]: (empty)
+    [McSlotId=1]:     MacroCell: Name=Net_152, Mode=(D-Register) @ [UDB=(2,1)][LB=0][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_97) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_151_SYNCOUT
+        );
+        Output = Net_152 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=Net_131, Mode=(D-Register) @ [UDB=(2,1)][LB=0][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_97) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_96_SYNCOUT
+        );
+        Output = Net_131 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
+synccell: Name =Pin_RE1_In(1)_SYNC
+    PORT MAP (
+        in => Net_151 ,
+        out => Net_151_SYNCOUT ,
+        clock => ClockBlock_BUS_CLK );
+    Properties:
+    {
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+synccell: Name =Pin_RE0_In(0)_SYNC
+    PORT MAP (
+        in => Net_96 ,
+        out => Net_96_SYNCOUT ,
+        clock => ClockBlock_BUS_CLK );
+    Properties:
+    {
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(2,2)] is empty.
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] contents:
+LAB@[UDB=(3,1)][LB=0] #macrocells=1, #inputs=1, #pterms=1
+{
+    [McSlotId=0]:     MacroCell: Name=Net_132, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=0]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_97) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_105_SYNCOUT
+        );
+        Output = Net_132 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+synccell: Name =Pin_RE0_In(1)_SYNC
+    PORT MAP (
+        in => Net_105 ,
+        out => Net_105_SYNCOUT ,
+        clock => ClockBlock_BUS_CLK );
+    Properties:
+    {
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
 UDB [UDB=(3,2)] is empty.
 UDB [UDB=(3,3)] is empty.
 UDB [UDB=(3,4)] is empty.
@@ -2756,33 +2719,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.002ms
-Digital Placement phase: Elapsed time ==> 1s.023ms
+Digital component placer commit/Report: Elapsed time ==> 0s.001ms
+Digital Placement phase: Elapsed time ==> 0s.938ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 1s.862ms
+Digital Routing phase: Elapsed time ==> 1s.740ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 0s.226ms
+Bitstream and API generation phase: Elapsed time ==> 0s.211ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.039ms
+Bitstream verification phase: Elapsed time ==> 0s.034ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Warning: sta.M0019: PrototypingKit_DDS_timing.html: Warning-1366: Setup time violation found in a path from clock ( CyBUS_CLK ) to clock ( CyBUS_CLK ). (File=D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_DDS.cydsn\PrototypingKit_DDS_timing.html)
 Timing report is in PrototypingKit_DDS_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.276ms
+Static timing analysis phase: Elapsed time ==> 0s.325ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.187ms
+Design database save phase: Elapsed time ==> 0s.184ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 4s.277ms
+cydsfit: Elapsed time ==> 4s.077ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 4s.315ms
-API generation phase: Elapsed time ==> 0s.801ms
-Dependency generation phase: Elapsed time ==> 0s.029ms
+Fitter phase: Elapsed time ==> 4s.125ms
+API generation phase: Elapsed time ==> 0s.913ms
+Dependency generation phase: Elapsed time ==> 0s.013ms
 Cleanup phase: Elapsed time ==> 0s.001ms
