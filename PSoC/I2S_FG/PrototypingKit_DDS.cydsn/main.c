@@ -7,13 +7,14 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.02.11 32bit Sine Table
  * 2016.01.31 32bit/384kHz
  * 2016.01.31 24bit/384kHz 
  *
  * ========================================
 */
 #include <project.h>
-#include "wavetable.h"
+#include "wavetable16_0_9.h"
 
 #define SAMPLE_CLOCK    382000u
 
