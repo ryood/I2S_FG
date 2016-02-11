@@ -16,10 +16,10 @@
 #include <project.h>
 #include "wavetable32_0_9_32768.h"
 
-#define SAMPLE_CLOCK    382000u
+#define SAMPLE_CLOCK    192000u
 
 #define TABLE_SIZE      32768
-#define BUFFER_SIZE     8     
+#define BUFFER_SIZE     4     
 
 /* Defines for DMA_0 */
 #define DMA_0_BYTES_PER_BURST 1
@@ -27,10 +27,12 @@
 #define DMA_0_SRC_BASE (CYDEV_SRAM_BASE)
 #define DMA_0_DST_BASE (CYDEV_PERIPH_BASE)
 /* Defines for DMA_1 */
+/*
 #define DMA_1_BYTES_PER_BURST 1
 #define DMA_1_REQUEST_PER_BURST 1
 #define DMA_1_SRC_BASE (CYDEV_SRAM_BASE)
 #define DMA_1_DST_BASE (CYDEV_PERIPH_BASE)
+*/
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -38,8 +40,10 @@ uint8 DMA_0_Chan;
 uint8 DMA_0_TD[1];
 /* Variable declarations for DMA_1 */
 /* Move these variable declarations to the top of the function */
+/*
 uint8 DMA_1_Chan;
 uint8 DMA_1_TD[1];
+*/
 
 volatile uint8 waveBuffer_0[BUFFER_SIZE];
 //volatile uint8 waveBuffer_1[BUFFER_SIZE];
@@ -57,7 +61,8 @@ const int16 frequencyMnrStep[] = {
     1, 1, 1,  1,  2,  5,  10,  20,  50,  100,  200,  500,
     1000,   2000,  5000,  10000,  20000,  50000
 };
-#define FREQUENCY_MAJ_INDEX_INIT    9
+#define FREQUENCY_INIT  50000
+#define FREQUENCY_MAJ_INDEX_INIT    14
 #define FREQUENCY_TABLE_LENGTH \
     ((int)(sizeof(frequencyMajTable)/sizeof(frequencyMajTable[1])))
 
@@ -188,7 +193,7 @@ int readRE(int RE_n)
 int main()
 {
     int16 frequencyMajIndex = FREQUENCY_MAJ_INDEX_INIT;
-    int32 frequency = 1000;
+    int32 frequency = FREQUENCY_INIT;
     int re_val;
     
     setDDSParameter_0(frequency);
@@ -210,6 +215,7 @@ int main()
     CyDmaChEnable(DMA_0_Chan, 1);
 
     /* DMA Configuration for DMA_1 */
+    /*
     DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
         HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
     DMA_1_TD[0] = CyDmaTdAllocate();
@@ -217,6 +223,7 @@ int main()
     CyDmaTdSetAddress(DMA_1_TD[0], LO16((uint32)waveBuffer_0), LO16((uint32)I2S_1_TX_CH0_F1_PTR));
     CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
     CyDmaChEnable(DMA_1_Chan, 1);
+    */
 
     ISR_DMA_0_Done_StartEx(dma_0_done_handler);
     //ISR_DMA_1_Done_StartEx(dma_1_done_handler);
