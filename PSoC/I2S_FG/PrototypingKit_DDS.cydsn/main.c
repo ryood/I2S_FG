@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.02.11 Lchのみ出力
  * 2016.02.11 32bit Sine Table
  * 2016.01.31 32bit/384kHz
  * 2016.01.31 24bit/384kHz 
@@ -16,7 +17,7 @@
 #include <project.h>
 #include "wavetable32_0_9_32768.h"
 
-#define SAMPLE_CLOCK    192000u
+#define SAMPLE_CLOCK    384000u
 
 #define TABLE_SIZE      32768
 #define BUFFER_SIZE     4     
@@ -61,8 +62,8 @@ const int16 frequencyMnrStep[] = {
     1, 1, 1,  1,  2,  5,  10,  20,  50,  100,  200,  500,
     1000,   2000,  5000,  10000,  20000,  50000
 };
-#define FREQUENCY_INIT  50000
-#define FREQUENCY_MAJ_INDEX_INIT    14
+#define FREQUENCY_INIT  10000
+#define FREQUENCY_MAJ_INDEX_INIT    12
 #define FREQUENCY_TABLE_LENGTH \
     ((int)(sizeof(frequencyMajTable)/sizeof(frequencyMajTable[1])))
 
@@ -79,10 +80,12 @@ void setDDSParameter_1(uint16 frequency)
 */
 void generateWave_0()
 {
-    int i, index, v;
+    int i, index;
+    int32 v;
     uint8* p8;
     
     // 波形をバッファに転送
+    // Todo: BUFFER_SIZEが4の場合はforループを外す。
     for (i = 0; i < BUFFER_SIZE; i+=4) {
         phaseRegister_0 += tuningWord_0;
         // テーブルの要素数=2^n として 32 - n で右シフト
@@ -90,13 +93,17 @@ void generateWave_0()
         // 32768 = 2^15 : 32 - 15 = 17 
         index = phaseRegister_0 >> 17;
         
-        p8 = (uint8 *)(sineTable + index);
-        //v = (sineTable[index] >> 1);
-        //p8 = (uint8 *)(&v);
+        //p8 = (uint8 *)(sineTable + index);
+        // 右シフトで出力レベルを減衰
+        v = (sineTable[index] >> 0);
+        /*
+        p8 = (uint8 *)(&v);
         waveBuffer_0[i]   = *(p8 + 3);
         waveBuffer_0[i+1] = *(p8 + 2);
         waveBuffer_0[i+2] = *(p8 + 1);
         waveBuffer_0[i+3] = *p8;
+        */
+        *((uint32 *)waveBuffer_0) = __REV(v);
     }
 }
 
