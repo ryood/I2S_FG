@@ -13,13 +13,17 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_DDS\Header Files">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_2048.h">
 <ExpandedNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS</v>
 <v>I2S_FG\PrototypingKit_DDS\TopDesign</v>
 <v>I2S_FG\PrototypingKit_DDS\Header Files</v>
 <v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable16_0_9.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_2048.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_32768.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_8192.h</v>
 <v>I2S_FG\PrototypingKit_DDS\Source Files</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
@@ -31,6 +35,10 @@
 <v>I2S_FG\PrototypingKit_DDS\Header Files\cyapicallbacks.h</v>
 <v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable.h</v>
 <v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable16_0_9.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_2048.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_32768.h</v>
+<v>I2S_FG\PrototypingKit_DDS\Header Files\wavetable32_0_9_8192.h</v>
 <v>I2S_FG\PrototypingKit_DDS\Source Files</v>
 <v>I2S_FG\PrototypingKit_DDS\Source Files\main.c</v>
 <v>I2S_FG\PrototypingKit_DDS\Generated_Source</v>

@@ -55,7 +55,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
 <dep name=".\main.c" />
-<dep name=".\wavetable16_0_9.h" />
+<dep name=".\wavetable32_0_9_32768.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\CYDMAC.H" />
 <file name=".\Generated_Source\PSoC5\CYFITTER.H" />
@@ -98,6 +98,10 @@
 <file name=".\Generated_Source\PSoC5\cytypes.h" />
 <file name=".\Generated_Source\PSoC5\project.h" />
 <file name=".\main.c" />
+<file name=".\wavetable32_0_9_32768.h" />
+<file name=".\wavetable32_0_9_2048.h" />
+<file name=".\wavetable32_0_9.h" />
+<file name=".\wavetable32_0_9_8192.h" />
 <file name=".\wavetable16_0_9.h" />
 <file name=".\wavetable.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Clock_1.o">
@@ -1756,7 +1760,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130996431019365275" />
+<deps_time v="130996473877253559" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 </userData>

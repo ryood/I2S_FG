@@ -14,12 +14,12 @@
  * ========================================
 */
 #include <project.h>
-#include "wavetable16_0_9.h"
+#include "wavetable32_0_9_32768.h"
 
 #define SAMPLE_CLOCK    382000u
 
-#define TABLE_SIZE      1024
-#define BUFFER_SIZE     4     
+#define TABLE_SIZE      32768
+#define BUFFER_SIZE     8     
 
 /* Defines for DMA_0 */
 #define DMA_0_BYTES_PER_BURST 1
@@ -80,18 +80,21 @@ void generateWave_0()
     // 波形をバッファに転送
     for (i = 0; i < BUFFER_SIZE; i+=4) {
         phaseRegister_0 += tuningWord_0;
-        index = phaseRegister_0 >> 22;
+        // テーブルの要素数=2^n として 32 - n で右シフト
+        // 1024  = 2^10 : 32 - 10 = 22
+        // 32768 = 2^15 : 32 - 15 = 17 
+        index = phaseRegister_0 >> 17;
         
         p8 = (uint8 *)(sineTable + index);
         //v = (sineTable[index] >> 1);
         //p8 = (uint8 *)(&v);
-        waveBuffer_0[i]   = *(p8 + 1);
-        waveBuffer_0[i+1] = *p8;
-        waveBuffer_0[i+2] = 0;
-        waveBuffer_0[i+3] = 0;
+        waveBuffer_0[i]   = *(p8 + 3);
+        waveBuffer_0[i+1] = *(p8 + 2);
+        waveBuffer_0[i+2] = *(p8 + 1);
+        waveBuffer_0[i+3] = *p8;
     }
-    
 }
+
 /*
 void generateWave_1()
 {
