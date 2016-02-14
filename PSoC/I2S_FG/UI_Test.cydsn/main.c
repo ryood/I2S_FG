@@ -11,6 +11,7 @@
  *  RX: P12[6]
  *  TX: P13[7]
  *
+ * 2016.02.15 Rotary Encoder
  * 2016.02.15 KeyPad
  * 2016.02.14 I2C LCD Test
  * 2016.02.14 Ext XTAL Test
@@ -40,11 +41,55 @@ int keyPadScan()
     return -1;
 }
 
+//-------------------------------------------------
+// ロータリーエンコーダの読み取り
+// return: ロータリーエンコーダーの回転方向
+//         0:変化なし 1:時計回り -1:反時計回り
+//
+int readRE()
+{
+    static uint8_t index;
+    uint8_t rd = 0;
+    int retval = 0;
+    
+    rd = Pin_RE_Read();
+
+    index = (index << 2) | rd;
+	index &= 0b1111;
+
+    /*
+	switch (index) {
+	// 時計回り
+	case 0b0001:	// 00 -> 01
+	case 0b1110:	// 11 -> 10
+	    retval = 1;
+	    break;
+	// 反時計回り
+	case 0b0010:	// 00 -> 10
+	case 0b1101:	// 11 -> 01
+	    retval = -1;
+	    break;
+    }
+    */
+    
+    // Alps EC12E24208
+    switch (index) {
+    case 0b1101:
+        retval = -1;
+        break;
+    case 0b1000:
+        retval = 1;
+        break;
+    }
+    return retval;
+}
+
 int main()
 {
     char buff1[80];
     char buff2[80];
-    int cnt;
+    char buff3[80];
+    int cnt, v;
     
     CyGlobalIntEnable; /* Enable global interrupts. */
 
@@ -57,7 +102,7 @@ int main()
     Pin_I2C_RST_Write(1u);
     
     I2CM_LCD_Start();
-    // akizuki AQM1602(3.3V)
+    // akizuki AQM0802(3.3V)
     LCD_Init(0x3e, 32);
     
     CyDelay(100);
@@ -69,21 +114,26 @@ int main()
     CyDelay(1000);
     
     cnt = 0;
+    v = 0;
     for(;;)
     {
-        Pin_LED_Write(Pin_LED_Read() ? 0 : 1);
-        
-        sprintf(buff1, "%08d\r\n", cnt);
-        UART_PutString(buff1);
+        //Pin_LED_Write(Pin_LED_Read() ? 0 : 1);
+
         cnt++;
-        
-        sprintf(buff2, "%d        \r\n", keyPadScan());
+        v += readRE();
+
+        sprintf(buff1, "%08d", cnt);
+        sprintf(buff2, "%d   ", keyPadScan());
+        sprintf(buff3, "%d   ", v);
+
         LCD_SetPos(0, 0);
         LCD_Puts(buff1);
         LCD_SetPos(0, 1);
         LCD_Puts(buff2);
+        LCD_SetPos(4, 1);
+        LCD_Puts(buff3);
         
-        CyDelay(100);        
+        CyDelay(1);        
     }
 }
 
