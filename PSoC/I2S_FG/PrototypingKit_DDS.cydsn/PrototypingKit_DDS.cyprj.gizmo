@@ -1037,15 +1037,15 @@
 <v>Cypress Component Catalog\Display</v>
 <v>Cypress Component Catalog\Filters</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
-<v>Cypress Component Catalog\Ports and Pins\Analog Pin [v2.10]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Bidirectional Pin [v2.10]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Input Pin [v2.10]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.10]</v>
+<v>Cypress Component Catalog\Ports and Pins\Analog Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Bidirectional Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Input Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.20]</v>
 <v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
 <v>Cypress Component Catalog\System\Boost Converter [v5.0]</v>
-<v>Cypress Component Catalog\System\Bootloadable [v1.40]</v>
-<v>Cypress Component Catalog\System\Bootloader [v1.40]</v>
+<v>Cypress Component Catalog\System\Bootloadable [v1.50]</v>
+<v>Cypress Component Catalog\System\Bootloader [v1.50]</v>
 <v>Cypress Component Catalog\System\Clock [v2.20]</v>
 <v>Cypress Component Catalog\System\Die Temperature [v2.0]</v>
 <v>Cypress Component Catalog\System\DMA [v1.70]</v>
