@@ -11,6 +11,7 @@
  *  RX: P12[6]
  *  TX: P13[7]
  *
+ * 2016.02.15 KeyPad
  * 2016.02.14 I2C LCD Test
  * 2016.02.14 Ext XTAL Test
  *
@@ -41,13 +42,15 @@ int keyPadScan()
 
 int main()
 {
-    char buff[80];
+    char buff1[80];
+    char buff2[80];
     int cnt;
     
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     UART_Start();
     UART_PutString("Start..\r\n");
+    
     
     Pin_I2C_RST_Write(0u);
     CyDelay(1);
@@ -58,26 +61,27 @@ int main()
     LCD_Init(0x3e, 32);
     
     CyDelay(100);
-    
+
     LCD_Puts(TITLE_STR1);
     LCD_SetPos(0, 1);
     LCD_Puts(TITLE_STR2);
     
-    CyDelay(3000);
-
+    CyDelay(1000);
+    
     cnt = 0;
     for(;;)
     {
         Pin_LED_Write(Pin_LED_Read() ? 0 : 1);
         
-        sprintf(buff, "%08d\r\n", keyPadScan());
-        UART_PutString(buff);
+        sprintf(buff1, "%08d\r\n", cnt);
+        UART_PutString(buff1);
         cnt++;
         
+        sprintf(buff2, "%d        \r\n", keyPadScan());
         LCD_SetPos(0, 0);
-        LCD_Puts("SIN     ");
+        LCD_Puts(buff1);
         LCD_SetPos(0, 1);
-        LCD_Puts(buff);
+        LCD_Puts(buff2);
         
         CyDelay(100);        
     }
