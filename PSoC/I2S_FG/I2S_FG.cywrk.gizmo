@@ -99,6 +99,10 @@
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_KeyPad_Row_Out\Pin_KeyPad_Row_Out.c</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_KeyPad_Row_Out\Pin_KeyPad_Row_Out.h</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_KeyPad_Row_Out\Pin_KeyPad_Row_Out_aliases.h</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LCD_SW</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LCD_SW\Pin_LCD_SW.c</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LCD_SW\Pin_LCD_SW.h</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LCD_SW\Pin_LCD_SW_aliases.h</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LED</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LED\Pin_LED.c</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_LED\Pin_LED.h</v>
@@ -111,6 +115,10 @@
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_RE_In\Pin_RE_In.c</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_RE_In\Pin_RE_In.h</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_RE_In\Pin_RE_In_aliases.h</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_SW_TEMP</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_SW_TEMP\Pin_SW_TEMP.c</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_SW_TEMP\Pin_SW_TEMP.h</v>
+<v>I2S_FG\UI_Test\Generated_Source\PSoC5\Pin_SW_TEMP\Pin_SW_TEMP_aliases.h</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\UART</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\UART\UART.c</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\UART\UART.h</v>
@@ -187,8 +195,6 @@
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
 <v>I2S_FG\UI_Test\Generated_Source\PSoC5\I2CM_LCD</v>
-<v>I2S_FG\UI_Test\Generated_Source\PSoC5\I2CM_LCD\I2CM_LCD.c</v>
-<v>I2S_FG\UI_Test\Generated_Source\PSoC5\I2CM_LCD\I2CM_LCD.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -310,9 +316,11 @@
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_I2S_Clock.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_KeyPad_Col_In.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_KeyPad_Row_Out.lst</v>
+<v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_LCD_SW.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_LED.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE_In.lst</v>
+<v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_SW_TEMP.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\SPLC792-I2C.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\UART.lst</v>
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_BOOT.lst</v>
@@ -372,8 +380,6 @@
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyPm.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CySpc.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
