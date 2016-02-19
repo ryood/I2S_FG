@@ -486,6 +486,49 @@
 <VisibleNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_RE.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\DMA_0_dma.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1_PM.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_DMA_0_Done.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_I2S_1_TX.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_0.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_I2S_Clock.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0_In.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1_In.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.elf</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.hex</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.map</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_RE.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Cm3Start.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyDmac.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
