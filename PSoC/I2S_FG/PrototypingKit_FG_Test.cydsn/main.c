@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.02.21 結合テスト用
  * 2016.02.19 DDSとUIを結合
  *
  * ========================================
