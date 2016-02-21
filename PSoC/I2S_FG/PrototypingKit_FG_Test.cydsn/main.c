@@ -16,12 +16,14 @@
 #include "wavetable32_0_9_32768.h"
 #include "SPLC792-I2C.h"
 
+#define DDS_ONLY    0
+
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160219")
+#define TITLE_STR2  ("20160221")
 
 // Defines for DDS
-#define SAMPLE_CLOCK    375000u
-#define FREQUENCY_INIT  1000
+#define SAMPLE_CLOCK    312500u
+#define FREQUENCY_INIT  50000
 
 #define TABLE_SIZE      32768
 #define BUFFER_SIZE     4     
@@ -41,8 +43,10 @@
 
 #define KEY_BUFFER_LENGTH   8
 
-#define LCD_ON  (1)
-#define LCD_OFF (0)
+#define LCD_ON  1
+#define LCD_OFF 0
+
+#define ATTENUATE_LIMIT 16
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -54,6 +58,7 @@ volatile uint32 tuningWord_0;
 volatile uint32 phaseRegister_0 = 0;
 
 volatile int frequency;
+volatile int8 attenuate;
 
 const int POW10[] = {
     1, 10, 100, 1000, 10000, 100000, 1000000, 10000000    
@@ -77,14 +82,14 @@ void generateWave_0()
     // Todo: BUFFER_SIZEが4の場合はforループを外す。
     for (i = 0; i < BUFFER_SIZE; i+=4) {
         phaseRegister_0 += tuningWord_0;
-        // テーブルの要素数=2^n として 32 - n で右シフト
-        // 1024  = 2^10 : 32 - 10 = 22
-        // 32768 = 2^15 : 32 - 15 = 17 
+        // テーブルの要素数 = 2^n として 32 - n で右シフト
+        // ex)
+        //  1024  = 2^10 : 32 - 10 = 22
+        //  32768 = 2^15 : 32 - 15 = 17 
         index = phaseRegister_0 >> 17;
-        
-        //p8 = (uint8 *)(sineTable + index);
+
         // 右シフトで出力レベルを減衰
-        v = (sineTable[index] >> 0);
+        v = (sineTable[index] >> attenuate);
         *((uint32 *)waveBuffer_0) = __REV(v);
     }
 }
@@ -96,6 +101,7 @@ CY_ISR (dma_0_done_handler)
     Pin_Check_0_Write(0u);
 }
 
+#if !DDS_ONLY
 //-------------------------------------------------
 // LCDのOn/Off
 // parameter: sw: !0:on 0:off
@@ -118,6 +124,34 @@ void switchLCD(int swOn)
         Pin_I2C_RST_Write(0u);
         lcdStat = LCD_OFF;
     }
+}
+
+//-------------------------------------------------
+// readRE(): ロータリーエンコーダの読み取り
+// return: ロータリーエンコーダーの回転方向
+//         0:変化なし 1:時計回り -1:反時計回り
+//
+int readRE()
+{
+    static uint8_t index;
+    uint8_t rd = 0;
+    int retval = 0;
+    
+    rd = Pin_RE1_Read();
+
+    index = (index << 2) | rd;
+	index &= 0b1111;
+
+    // Alps EC12E24208
+    switch (index) {
+    case 0b1101:
+        retval = -1;
+        break;
+    case 0b1000:
+        retval = 1;
+        break;
+    }
+    return retval;
 }
 
 //------------------------------------------------------
@@ -198,22 +232,26 @@ int keyPadScan()
     }
     return -1;
 }
+#endif // DDS_ONLY
 
 //------------------------------------------------------
 // メイン・ルーチン
 //
 int main()
 {
-    int frequency = FREQUENCY_INIT;
     char buff1[10];
     char buff2[10];
     int i, v, key;
+    
+    frequency = FREQUENCY_INIT;
+    attenuate = 0;
     
     setDDSParameter_0(frequency);
     generateWave_0();
     
     CyGlobalIntEnable; /* Enable global interrupts. */
-    
+
+#if !DDS_ONLY
     // Init I2C LCD
     //
     I2CM_LCD_Start();
@@ -225,7 +263,8 @@ int main()
     
     CyDelay(1000);
     LCD_Clear();
-    
+#endif // DDS_ONLY
+
     // Init I2S DAC
     //
     I2S_1_Start();
@@ -248,9 +287,11 @@ int main()
     CyDelay(1);
 
     I2S_1_EnableTx();
-    
+
     for(;;)
     {
+#if !DDS_ONLY        
+        // ToDo: keyPadScan()と分岐を整理
         key = keyPadScan();
         if ((0 <= key && key <= 9) || (key == CMD_CLR) || (key == CMD_ENT)) {
             v = 0;
@@ -269,9 +310,15 @@ int main()
             sprintf(buff1, "MENU?   ");
         }
         
-        //frequency += readRE();
-        sprintf(buff2, "%2d%6d", key, frequency);
-
+        sprintf(buff2, "%2d%6d", attenuate, frequency);
+        
+        attenuate -= readRE();
+        if (attenuate < 0) {
+            attenuate = 0;
+        } else if (attenuate > ATTENUATE_LIMIT) {
+            attenuate = ATTENUATE_LIMIT;
+        }
+        
         if (lcdStat != LCD_ON && key == CMD_LCD_ON) {
             switchLCD(LCD_ON);
             lcdStat = LCD_ON;
@@ -281,14 +328,15 @@ int main()
             lcdStat = LCD_OFF;
         }
 
+        // ToDo: LCD書き換えの条件を修正: attenuateの更新時
         if (lcdStat != LCD_OFF && key != -1) {
             LCD_SetPos(0, 0);
             LCD_Puts(buff1);
             LCD_SetPos(0, 1);
             LCD_Puts(buff2);
         }
-        
-        CyDelay(1);        
+        //CyDelay(100);
+#endif // DDS_ONLY        
     }
 }
 
