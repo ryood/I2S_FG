@@ -26,7 +26,7 @@
 
 // Defines for DDS
 #define SAMPLE_CLOCK    312500u
-#define FREQUENCY_INIT  50000
+#define FREQUENCY_INIT  100000
 
 #define TABLE_SIZE      32768
 #define BUFFER_SIZE     4     
