@@ -109,4 +109,14 @@ void LCD_Puts(char8 *s)
 	}
 }
 
+// コントラスト設定
+void LCD_SetContrast(uint8 contrast)
+{
+    LCD_Cmd(0b00111001);	// function set
+    LCD_Cmd(0b01110000 | (contrast & 0xF));	// contrast Low
+    LCD_Cmd(0b01011100 | ((contrast >> 4) & 0x3)); // contast High/icon/power 
+	LCD_Cmd(0b00111000); // function set
+    
+}
+
 /* [] END OF FILE */

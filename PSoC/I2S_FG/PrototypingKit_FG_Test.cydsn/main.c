@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.02.24 LCDのコントラスト設定
  * 2016.02.24 電源電圧測定
  * 2016.02.21 結合テスト用
  * 2016.02.19 DDSとUIを結合
@@ -48,6 +49,8 @@
 
 #define LCD_ON  1
 #define LCD_OFF 0
+#define LCD_CONTRAST_INIT   32
+#define LCD_CONTRAST_LIMIT  63
 
 #define ATTENUATE_LIMIT 16
 
@@ -63,8 +66,6 @@ volatile uint32 phaseRegister_0 = 0;
 volatile int frequency;
 volatile int8 attenuate;
 
-volatile int32 supplyVoltage;
-
 const int POW10[] = {
     1, 10, 100, 1000, 10000, 100000, 1000000, 10000000    
 };
@@ -72,6 +73,9 @@ const int POW10[] = {
 int keyBuffer[KEY_BUFFER_LENGTH] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 int kbp = 0;
 int lcdStat = 0;
+int lcdContrast = LCD_CONTRAST_INIT;
+
+int32 supplyVoltage;
 
 void setDDSParameter_0(uint32 frequency)
 {
@@ -101,9 +105,9 @@ void generateWave_0()
 
 CY_ISR (dma_0_done_handler)
 {
-    Pin_Check_0_Write(1u);
+    //Pin_Check_0_Write(1u);
     generateWave_0();
-    Pin_Check_0_Write(0u);
+    //Pin_Check_0_Write(0u);
 }
 
 #if !DDS_ONLY
@@ -121,7 +125,7 @@ void switchLCD(int swOn)
         Pin_I2C_RST_Write(1u);
         
         // akizuki AQM0802(3.3V)
-        LCD_Init(0x3e, 32);        
+        LCD_Init(0x3e, lcdContrast);        
         CyDelay(1);
         lcdStat = LCD_ON;
     } else {
@@ -261,7 +265,7 @@ int main()
 {
     char buff1[10];
     char buff2[10];
-    int i, v, key;
+    int i, v, key, re_v;
     
     frequency = FREQUENCY_INIT;
     attenuate = 0;
@@ -340,14 +344,25 @@ int main()
         if (key == CMD_BATTERY) {
             sprintf(buff1, "%6ldmV", supplyVoltage);
         }
-        
-        sprintf(buff2, "%2d%6d", attenuate, frequency);
-        
+        sprintf(buff2, "%2d%6d", lcdContrast, frequency);
+        /*
         attenuate -= readRE();
         if (attenuate < 0) {
             attenuate = 0;
         } else if (attenuate > ATTENUATE_LIMIT) {
             attenuate = ATTENUATE_LIMIT;
+        }
+        */
+
+        re_v = readRE();
+        if (re_v != 0) {
+            lcdContrast += re_v;
+            if (lcdContrast < 0) {
+                lcdContrast = 0;
+            } else if (lcdContrast > LCD_CONTRAST_LIMIT) {
+                lcdContrast = LCD_CONTRAST_LIMIT;
+            }
+            LCD_SetContrast(lcdContrast);
         }
         
         if (lcdStat != LCD_ON && key == CMD_LCD_ON) {

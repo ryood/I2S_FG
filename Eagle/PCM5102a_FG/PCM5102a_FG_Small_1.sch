@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -19609,7 +19609,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="R2" library="resistor" deviceset="R-EU_" device="0207/7" value="0"/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="3MM" value="BLUE"/>
-<part name="R3" library="resistor" deviceset="R-EU_" device="0207/7" value="1k"/>
+<part name="R3" library="resistor" deviceset="R-EU_" device="0207/7" value="4.7k"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device="" value="PCM5102A_FG"/>
 <part name="C16" library="rcl" deviceset="CPOL-EU" device="E2.5-5" value="10uF"/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="0207/7" value="100k"/>
@@ -19620,9 +19620,7 @@ DIN A4, landscape with location and doc. field</description>
 <sheets>
 <sheet>
 <plain>
-<text x="27.94" y="121.92" size="1.778" layer="91">ToDo: PSoCでSCLとSDA入れ替え</text>
-<text x="134.62" y="147.32" size="1.778" layer="91">ToDo: LEDの明るさの確認</text>
-<text x="86.36" y="121.92" size="1.778" layer="91">ToDo: PSoCでLRCKとBCKを入れ替え</text>
+<text x="27.94" y="27.94" size="2.54" layer="91">※Q1, R1, R2, C10はピンソケットで実装</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="78.74" y="83.82" smashed="yes">

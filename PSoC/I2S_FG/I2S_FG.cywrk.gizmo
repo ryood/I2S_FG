@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_FG_Test\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_FG_Test\Header Files\SPLC792-I2C.h">
 <ExpandedNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS\TopDesign</v>
@@ -27,6 +27,7 @@
 <v>I2S_FG\PrototypingKit_FG_Test</v>
 <v>I2S_FG\PrototypingKit_FG_Test\TopDesign</v>
 <v>I2S_FG\PrototypingKit_FG_Test\PrototypingKit_FG_Test.cydwr</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Header Files\cyapicallbacks.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Header Files\SPLC792-I2C.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable.h</v>
@@ -306,6 +307,14 @@
 <v>I2S_FG\PrototypingKit_FG_Test\TopDesign</v>
 <v>I2S_FG\PrototypingKit_FG_Test\PrototypingKit_FG_Test.cydwr</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Header Files</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\cyapicallbacks.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\SPLC792-I2C.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable16_0_9.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable32_0_9.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable32_0_9_2048.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable32_0_9_32768.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Header Files\wavetable32_0_9_8192.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Source Files</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Source Files\main.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Source Files\SPLC792-I2C.c</v>
@@ -337,15 +346,6 @@
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -578,6 +578,49 @@
 <VisibleNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_RE.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\DMA_0_dma.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1_PM.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_DMA_0_Done.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_I2S_1_TX.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_0.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_I2S_Clock.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0_In.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1_In.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.elf</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.hex</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.map</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_1.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_RE.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Cm3Start.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyDmac.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -685,7 +728,6 @@
 <v>I2S_FG\UI_Test\System Reference Guides\cy_boot_v5_30</v>
 <v>I2S_FG\UI_Test\cy_clock_v2_20</v>
 <v>I2S_FG\UI_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>I2S_FG\UI_Test\cy_pins_v2_20</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -703,6 +745,8 @@
 <name v=".\PrototypingKit_FG_Test.cydsn\PrototypingKit_FG_Test.cydwr" />
 <name v=".\PrototypingKit_FG_Test.cydsn\main.c" />
 <name v=".\PrototypingKit_FG_Test.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\PrototypingKit_FG_Test.cydsn\SPLC792-I2C.c" />
+<name v=".\PrototypingKit_FG_Test.cydsn\SPLC792-I2C.h" />
 </OpenDocs>
 <config v="Debug" />
 <AutoUpdate v="true" />
