@@ -40,6 +40,23 @@
 <v>I2S_FG\PrototypingKit_FG_Test\Source Files\SPLC792-I2C.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_INT.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_PM.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
@@ -135,6 +152,10 @@
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_RE1_IN\Pin_RE1_IN.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_RE1_IN\Pin_RE1_IN.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_RE1_IN\Pin_RE1_IN_aliases.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_Supply_V</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_Supply_V\Pin_Supply_V.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_Supply_V\Pin_Supply_V.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Pin_Supply_V\Pin_Supply_V_aliases.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cycodeshareexport.ld</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cycodeshareimport.scat</v>
@@ -290,6 +311,23 @@
 <v>I2S_FG\PrototypingKit_FG_Test\Source Files\SPLC792-I2C.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_INT.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_PM.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.h</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.c</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.h</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
@@ -308,22 +346,6 @@
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cypins.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\DMA_0</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\DMA_0\DMA_0_dma.c</v>
-<v>I2S_FG\PrototypingKit_FG_Test\Generated_Source\PSoC5\DMA_0\DMA_0_dma.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -424,6 +446,13 @@
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_AMux.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_Ext_CP_Clk.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_INT.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_IRQ.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_PM.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_DelSig_Supply_theACLK.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_2.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
@@ -457,6 +486,7 @@
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_KeyPad_Row_Out.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_LCD_SW.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1.lst</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Supply_V.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\Listing Files\SPLC792-I2C.lst</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\PrototypingKit_FG_Test.elf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\CortexM3\ARM_GCC_493\Debug\PrototypingKit_FG_Test.hex</v>
@@ -548,49 +578,6 @@
 <VisibleNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_RE.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\DMA_0_dma.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\I2S_1_PM.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_DMA_0_Done.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\ISR_I2S_1_TX.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_0.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Check_1.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_I2S_Clock.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE0_In.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_RE1_In.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.elf</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.hex</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Debug\PrototypingKit_DDS.map</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_1.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Clock_RE.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\Cm3Start.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyBootAsmGnu.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyDmac.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyfitter_cfg.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
-<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -621,6 +608,7 @@
 <v>I2S_FG\PrototypingKit_FG_Test\CY8C58LP Family Datasheet</v>
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides</v>
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides\cy_boot_v5_20</v>
+<v>I2S_FG\PrototypingKit_FG_Test\ADC_DelSig_v3_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_dma_v1_70.pdf</v>
@@ -631,8 +619,12 @@
 <v>I2S_FG\PrototypingKit_FG_Test\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Debouncer_v1_0</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Gnd_v1_0.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\I2C_v3_50.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\I2S_v2_60.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Power_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Resistor_v1_0</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>I2S_FG\UI_Test</v>
 <v>I2S_FG\UI_Test\PSoC 5 Architecture TRM</v>
 <v>I2S_FG\UI_Test\CY8C58LP Family Datasheet</v>
@@ -669,6 +661,7 @@
 <v>I2S_FG\PrototypingKit_FG_Test\CY8C58LP Family Datasheet</v>
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides</v>
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides\cy_boot_v5_20</v>
+<v>I2S_FG\PrototypingKit_FG_Test\ADC_DelSig_v3_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_dma_v1_70.pdf</v>
@@ -679,8 +672,12 @@
 <v>I2S_FG\PrototypingKit_FG_Test\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Debouncer_v1_0</v>
 <v>I2S_FG\PrototypingKit_FG_Test\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Gnd_v1_0.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\I2C_v3_50.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\I2S_v2_60.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Power_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Resistor_v1_0</v>
+<v>I2S_FG\PrototypingKit_FG_Test\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>I2S_FG\UI_Test</v>
 <v>I2S_FG\UI_Test\PSoC 5 Architecture TRM</v>
 <v>I2S_FG\UI_Test\CY8C58LP Family Datasheet</v>
@@ -689,10 +686,6 @@
 <v>I2S_FG\UI_Test\cy_clock_v2_20</v>
 <v>I2S_FG\UI_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>I2S_FG\UI_Test\cy_pins_v2_20</v>
-<v>I2S_FG\UI_Test\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>I2S_FG\UI_Test\Debouncer_v1_0</v>
-<v>I2S_FG\UI_Test\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
-<v>I2S_FG\UI_Test\I2C_v3_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>

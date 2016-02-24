@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.02.24 電源電圧測定
  * 2016.02.21 結合テスト用
  * 2016.02.19 DDSとUIを結合
  *
@@ -20,7 +21,7 @@
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160221")
+#define TITLE_STR2  ("20160224")
 
 // Defines for DDS
 #define SAMPLE_CLOCK    312500u
@@ -41,6 +42,7 @@
 #define CMD_CLR     12
 #define CMD_ENT     13
 #define CMD_MENU    14
+#define CMD_BATTERY 15
 
 #define KEY_BUFFER_LENGTH   8
 
@@ -60,6 +62,8 @@ volatile uint32 phaseRegister_0 = 0;
 
 volatile int frequency;
 volatile int8 attenuate;
+
+volatile int32 supplyVoltage;
 
 const int POW10[] = {
     1, 10, 100, 1000, 10000, 100000, 1000000, 10000000    
@@ -184,7 +188,7 @@ int keyPadScan1()
 //         12:      C (クリア)
 //         13:      D (エンター)
 //         14:      * (メニュー)
-//         15:      # (未設定)
+//         15:      # (電源電圧)
 //
 const int keyPadMatrix[] = {
      1,  2,  3, 10,
@@ -227,12 +231,27 @@ int keyPadScan()
                 break;
             case CMD_ENT:
                 break;
+            case CMD_BATTERY:
+                break;
             }
         }
         return kv;
     }
     return -1;
 }
+
+//-------------------------------------------------
+// measureSupplyVoltage(): 電源電圧の測定
+// return: 電圧値(mV)
+//
+int measureSupplyVoltage()
+{
+    int16 sample, mv;
+    sample = ADC_DelSig_Supply_Read16();
+    mv = ADC_DelSig_Supply_CountsTo_mVolts(sample * 2);
+    return mv;
+}
+
 #endif // DDS_ONLY
 
 //------------------------------------------------------
@@ -264,6 +283,11 @@ int main()
     
     CyDelay(1000);
     LCD_Clear();
+    
+    // Init ADC
+    //
+    ADC_DelSig_Supply_Start();
+    
 #endif // DDS_ONLY
 
     // Init I2S DAC
@@ -307,8 +331,14 @@ int main()
             }
             sprintf(buff1, "%08d", v); 
         }
+        
         if (key == CMD_MENU) {
             sprintf(buff1, "MENU?   ");
+        }
+        
+        supplyVoltage = measureSupplyVoltage();
+        if (key == CMD_BATTERY) {
+            sprintf(buff1, "%6ldmV", supplyVoltage);
         }
         
         sprintf(buff2, "%2d%6d", attenuate, frequency);

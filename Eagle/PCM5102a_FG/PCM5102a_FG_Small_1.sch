@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -19612,6 +19612,10 @@ DIN A4, landscape with location and doc. field</description>
 <part name="R3" library="resistor" deviceset="R-EU_" device="0207/7" value="1k"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device="" value="PCM5102A_FG"/>
 <part name="C16" library="rcl" deviceset="CPOL-EU" device="E2.5-5" value="10uF"/>
+<part name="R4" library="resistor" deviceset="R-EU_" device="0207/7" value="100k"/>
+<part name="R5" library="resistor" deviceset="R-EU_" device="0207/7" value="100k"/>
+<part name="SUPPLY2" library="supply2" deviceset="DGND" device=""/>
+<part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -19682,6 +19686,10 @@ DIN A4, landscape with location and doc. field</description>
 <instance part="R3" gate="G$1" x="154.94" y="134.62" rot="R90"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="C16" gate="G$1" x="167.64" y="96.52" rot="MR90"/>
+<instance part="R4" gate="G$1" x="104.14" y="91.44"/>
+<instance part="R5" gate="G$1" x="114.3" y="91.44"/>
+<instance part="SUPPLY2" gate="G$1" x="96.52" y="86.36"/>
+<instance part="+3V5" gate="G$1" x="121.92" y="101.6"/>
 </instances>
 <busses>
 </busses>
@@ -19776,6 +19784,12 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="154.94" y1="121.92" x2="154.94" y2="119.38" width="0.1524" layer="91"/>
 <junction x="154.94" y="119.38"/>
 </segment>
+<segment>
+<wire x1="96.52" y1="88.9" x2="96.52" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="91.44" x2="99.06" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="SUPPLY2" gate="G$1" pin="DGND"/>
+</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -19841,6 +19855,12 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
 <wire x1="208.28" y1="149.86" x2="208.28" y2="139.7" width="0.1524" layer="91"/>
 <junction x="208.28" y="139.7"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="119.38" y1="91.44" x2="121.92" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="+3V5" gate="G$1" pin="+3V3"/>
+<wire x1="121.92" y1="91.44" x2="121.92" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -20135,6 +20155,16 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="IC1" gate="G$1" pin="51"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="111.76" x2="96.52" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="IC1" gate="G$1" pin="45"/>
+<wire x1="86.36" y1="96.52" x2="109.22" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="96.52" x2="109.22" y2="91.44" width="0.1524" layer="91"/>
+<junction x="109.22" y="91.44"/>
 </segment>
 </net>
 </nets>
