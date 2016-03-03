@@ -247,6 +247,40 @@ int measureSupplyVoltage()
     return mv;
 }
 
+//-------------------------------------------------
+// KeyBufferの周波数値の増減
+// parameter: val: -1 または　1 それ以外は作用なし
+// 
+// ＊＊＊＊＊ 範囲制限にBugあり ＊＊＊＊＊
+//
+void incDecKeyBuffer(int val)
+{
+	int i, v;
+	
+	if (val != -1 && val != 1) {
+		return;
+	}
+	
+	v = keyBuffer[0];
+	v += val;
+	if (v >= 10) {
+		if (kbp < KEY_BUFFER_LENGTH) {
+			kbp++;
+			keyBuffer[0] = 1;
+		}
+	} else if (v <= 0) {
+		if (kbp > 0) {
+			kbp--;
+			keyBuffer[0] = 9;
+		}
+	} else {
+		keyBuffer[0] = v;
+	}
+ 	// 下位を0で埋める
+    for (i = 1; i < kbp - 1; i++) {
+		keyBuffer[i] = 0;
+	}
+}
 #endif // DDS_ONLY
 
 //------------------------------------------------------
@@ -261,6 +295,21 @@ int keyBuffer2int()
 		v += keyBuffer[i] * POW10[kbp - 1 - i];
 	}
     return v;
+}
+
+void setKeyBufferWithInt(int v)
+{
+    int buff[KEY_BUFFER_LENGTH];
+    int i;
+    
+    for (i = 0; v > 0 && i < KEY_BUFFER_LENGTH; i++) {
+        buff[i] = v % 10;
+        v /= 10;
+    }
+    kbp = i;
+    for (i = 0; i < kbp; i++) {
+        keyBuffer[i] = buff[kbp - 1 - i];
+    }
 }
 
 int constrain(int x, int min, int max)
@@ -282,6 +331,7 @@ int main()
     int isDirty;
     
     frequency = FREQUENCY_INIT;
+    setKeyBufferWithInt(frequency);
     attenuate = 0;
     
     setDDSParameter_0(frequency);
@@ -430,7 +480,6 @@ int main()
     			switchLCD(LCD_ON);
     			lcdStat = LCD_ON;
     		}
-            isDirty = 1;
     		break;
     	case CMD_LCD_OFF:
     		if (lcdStat != LCD_OFF) {
@@ -447,7 +496,11 @@ int main()
     	if (re_v != 0) {
     		switch (currentMode) {
     		case MODE_NORMAL:
-    			// ToDo: 周波数増減
+    			// 周波数増減
+                incDecKeyBuffer(re_v);
+                frequency = keyBuffer2int();
+    		    setDDSParameter_0(frequency);
+                isDirty = 1;
     			break;
     		case MODE_FREQUENCY:
     			// do nothing
@@ -479,11 +532,11 @@ int main()
             case MODE_FIRSTTIME:
                  currentMode = MODE_NORMAL;
     		case MODE_NORMAL:
-    			sprintf(buff1, "%8d", frequency);
+    			sprintf(buff1, "%6dHz", frequency);
     			sprintf(buff2, "%s A:%d", strWaveForm[waveForm], attenuate);
     			break;
     		case MODE_FREQUENCY:
-    			sprintf(buff1, "%8d", keyBuffer2int());
+    			sprintf(buff1, "%6dHz", keyBuffer2int());
     			sprintf(buff2, "%s A:%d", strWaveForm[waveForm], attenuate);
     			break;
     		case MODE_WAVEFORM:
@@ -496,13 +549,14 @@ int main()
     			break;
     		}
     		
+            //sprintf(buff2, "%8d", kbp);
     		LCD_SetPos(0, 0);
     		LCD_Puts(buff1);
     		LCD_SetPos(0, 1);
     		LCD_Puts(buff2);
             
             if (currentMode == MODE_FREQUENCY) {
-                LCD_SetPos(7, 0);
+                LCD_SetPos(5, 0);
             }
         }
 
