@@ -130,6 +130,46 @@ CY_ISR (dma_0_done_handler)
 }
 
 #if !DDS_ONLY
+
+//-------------------------------------------------
+// ユーティリティ
+//
+int constrain(int x, int min, int max)
+{
+	if (x < min) {
+		x = min;
+	} else if (x > max) {
+		x = max;
+	}
+	return x;
+}
+
+int keyBuffer2int()
+{
+	int i, v;
+    
+    v = 0;
+	for (i = 0; i < kbp; i++) {
+		v += keyBuffer[i] * POW10[kbp - 1 - i];
+	}
+    return v;
+}
+
+void setKeyBufferWithInt(int v)
+{
+    int buff[KEY_BUFFER_LENGTH];
+    int i;
+    
+    for (i = 0; v > 0 && i < KEY_BUFFER_LENGTH; i++) {
+        buff[i] = v % 10;
+        v /= 10;
+    }
+    kbp = i;
+    for (i = 0; i < kbp; i++) {
+        keyBuffer[i] = buff[kbp - 1 - i];
+    }
+}
+
 //-------------------------------------------------
 // LCDのOn/Off
 // parameter: sw: !0:on 0:off
@@ -249,78 +289,36 @@ int measureSupplyVoltage()
 
 //-------------------------------------------------
 // KeyBufferの周波数値の増減
-// parameter: val: -1 または　1 それ以外は作用なし
-// 
-// ＊＊＊＊＊ 範囲制限にBugあり ＊＊＊＊＊
+// parameter: val:増減値 -1 または 1。
+//                それ以外は動作不定
 //
-void incDecKeyBuffer(int val)
+void incDecFrequency(int val)
 {
-	int i, v;
+	int v, cnt, rem;
 	
-	if (val != -1 && val != 1) {
-		return;
+	v = frequency;
+	cnt = 0;
+    rem = 0;
+	while (v) {
+		rem = v % 10;
+		v /= 10;
+		cnt++;
 	}
 	
-	v = keyBuffer[0];
-	v += val;
-	if (v >= 10) {
-		if (kbp < KEY_BUFFER_LENGTH) {
-			kbp++;
-			keyBuffer[0] = 1;
-		}
-	} else if (v <= 0) {
-		if (kbp > 0) {
-			kbp--;
-			keyBuffer[0] = 9;
-		}
-	} else {
-		keyBuffer[0] = v;
-	}
- 	// 下位を0で埋める
-    for (i = 1; i < kbp - 1; i++) {
-		keyBuffer[i] = 0;
-	}
+    v = rem + val;
+    if (v > 0) {
+	    frequency = POW10[cnt - 1] * v;
+    } else {
+        frequency = POW10[cnt - 2] * (9 + v);
+    }
+	frequency = constrain(frequency, 1, SAMPLE_CLOCK / 2);
 }
+
 #endif // DDS_ONLY
 
 //------------------------------------------------------
 // メイン・ルーチン
 //
-int keyBuffer2int()
-{
-	int i, v;
-    
-    v = 0;
-	for (i = 0; i < kbp; i++) {
-		v += keyBuffer[i] * POW10[kbp - 1 - i];
-	}
-    return v;
-}
-
-void setKeyBufferWithInt(int v)
-{
-    int buff[KEY_BUFFER_LENGTH];
-    int i;
-    
-    for (i = 0; v > 0 && i < KEY_BUFFER_LENGTH; i++) {
-        buff[i] = v % 10;
-        v /= 10;
-    }
-    kbp = i;
-    for (i = 0; i < kbp; i++) {
-        keyBuffer[i] = buff[kbp - 1 - i];
-    }
-}
-
-int constrain(int x, int min, int max)
-{
-	if (x < min) {
-		x = min;
-	} else if (x > max) {
-		x = max;
-	}
-	return x;
-}
 
 int main()
 {
@@ -439,6 +437,7 @@ int main()
     	case CMD_ENT:
     		currentMode = MODE_NORMAL;
     		frequency = keyBuffer2int();
+            frequency = constrain(frequency, 1, SAMPLE_CLOCK / 2);
     		setDDSParameter_0(frequency);
     		//kbp = 0;
             LCD_SetCursor(0, 0);
@@ -497,8 +496,7 @@ int main()
     		switch (currentMode) {
     		case MODE_NORMAL:
     			// 周波数増減
-                incDecKeyBuffer(re_v);
-                frequency = keyBuffer2int();
+                incDecFrequency(re_v);
     		    setDDSParameter_0(frequency);
                 isDirty = 1;
     			break;
