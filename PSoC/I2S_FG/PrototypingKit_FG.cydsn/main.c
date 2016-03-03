@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.03.03 UIを整理
  * 2016.03.01 created
  *
  * ========================================
@@ -19,11 +20,11 @@
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160301")
+#define TITLE_STR2  ("20160303")
 
 // Defines for DDS
 #define SAMPLE_CLOCK    312500u
-#define FREQUENCY_INIT  10000
+#define FREQUENCY_INIT  1000
 
 #define TABLE_SIZE      32768
 #define BUFFER_SIZE     4     
@@ -35,12 +36,26 @@
 #define DMA_0_DST_BASE (CYDEV_PERIPH_BASE)
 
 // Defines for UI
+#define MODE_FIRSTTIME  -1
+#define MODE_NORMAL		0
+#define MODE_FREQUENCY	1
+#define MODE_WAVEFORM	2
+#define MODE_CONFIG		3
+#define MODE_N			4
+
 #define CMD_LCD_ON  10
 #define CMD_LCD_OFF 11
 #define CMD_CLR     12
 #define CMD_ENT     13
-#define CMD_MENU    14
-#define CMD_BATTERY 15
+#define CMD_MODE    14
+#define CMD_CANCEL  15
+
+#define WAVEFORM_SIN	0
+#define WAVEFORM_TRI	1
+#define WAVEFORM_SW1	2
+#define WAVEFORM_SW2	3
+#define WAVEFORM_SQR	4
+#define WAVEFORM_N		5
 
 #define KEY_BUFFER_LENGTH   8
 
@@ -49,7 +64,7 @@
 #define LCD_CONTRAST_INIT   32
 #define LCD_CONTRAST_LIMIT  63
 
-#define ATTENUATE_LIMIT 16
+#define ATTENUATE_LIMIT 8
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -62,10 +77,17 @@ volatile uint32 phaseRegister_0 = 0;
 
 volatile int frequency;
 volatile int8 attenuate;
+volatile int waveForm;
+
+const char *strWaveForm[] = {
+	"SIN ", "TRI ", "SW1 ", "SW2 ", "SQR "
+};
 
 const int POW10[] = {
     1, 10, 100, 1000, 10000, 100000, 1000000, 10000000    
 };
+
+int currentMode;
 
 int keyBuffer[KEY_BUFFER_LENGTH] = { 0 };
 int kbp = 0;
@@ -183,13 +205,8 @@ int keyPadScan1()
 //------------------------------------------------------
 // keyPadScan():
 // return: -1: 変化なし
-//         0 ..  9: 数字キー入力 結果はKeyBuffer
-//         10:      A (LCD On)
-//         11:      B (LCD Off) 
-//         12:      C (クリア)
-//         13:      D (エンター)
-//         14:      * (メニュー)
-//         15:      # (電源電圧)
+//         0 ..  9: 数字キー入力
+//         10.. 15: CMD
 //
 const int keyPadMatrix[] = {
      1,  2,  3, 10,
@@ -207,42 +224,15 @@ int keyPadScan()
     tmp = keyPadScan1();
     CyDelayUs(100);
     krd = keyPadScan1();
-    
+
+    kv = -1;    
     if (tmp == krd && krd != prevKey) {
         prevKey = krd;
-        kv = -1;
-        if (krd != -1) {
+		if (krd != -1) {
             kv = keyPadMatrix[krd];
-            switch (kv) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-                if (kbp < KEY_BUFFER_LENGTH) {
-                    keyBuffer[kbp] = kv;
-                    kbp++;
-                }
-                break;
-            case CMD_CLR:
-                kbp = 0;
-                break;
-            case CMD_MENU:
-                break;
-            case CMD_ENT:
-                break;
-            case CMD_BATTERY:
-                break;
-            }
         }
-        return kv;
     }
-    return -1;
+    return kv;
 }
 
 //-------------------------------------------------
@@ -262,11 +252,34 @@ int measureSupplyVoltage()
 //------------------------------------------------------
 // メイン・ルーチン
 //
+int keyBuffer2int()
+{
+	int i, v;
+    
+    v = 0;
+	for (i = 0; i < kbp; i++) {
+		v += keyBuffer[i] * POW10[kbp - 1 - i];
+	}
+    return v;
+}
+
+int constrain(int x, int min, int max)
+{
+	if (x < min) {
+		x = min;
+	} else if (x > max) {
+		x = max;
+	}
+	return x;
+}
+
 int main()
 {
     char buff1[10];
     char buff2[10];
-    int i, v, key, re_v;
+    int key;
+    int re_v;
+    int isDirty;
     
     frequency = FREQUENCY_INIT;
     attenuate = 0;
@@ -281,7 +294,7 @@ int main()
     //
     I2CM_LCD_Start();
     switchLCD(LCD_ON);
-    
+        
     LCD_Puts(TITLE_STR1);
     LCD_SetPos(0, 1);
     LCD_Puts(TITLE_STR2);
@@ -318,71 +331,183 @@ int main()
 
     I2S_1_EnableTx();
 
+    currentMode = MODE_FIRSTTIME;
+    
     for(;;)
     {
-#if !DDS_ONLY        
-        // ToDo: keyPadScan()と分岐を整理
-        key = keyPadScan();
-        if ((0 <= key && key <= 9) || (key == CMD_CLR) || (key == CMD_ENT)) {
-            v = 0;
-            for (i = 0; i < kbp; i++) {
-                v += keyBuffer[i] * POW10[kbp - 1 - i];
-            }
-
-            if (key == CMD_ENT) {
-                frequency = v;
-                setDDSParameter_0(frequency);
-                kbp = 0;
-            }
-            sprintf(buff1, "%08d", v); 
-        }
+#if !DDS_ONLY     
+        isDirty = 0;
+	
+    	// キーパッドの処理
+    	//
+    	key = keyPadScan();
         
-        if (key == CMD_MENU) {
-            sprintf(buff1, "MENU?   ");
-        }
-        
-        supplyVoltage = measureSupplyVoltage();
-        if (key == CMD_BATTERY) {
-            sprintf(buff1, "%6ldmV", supplyVoltage);
-        }
-        sprintf(buff2, "%2d%6d", lcdContrast, frequency);
         /*
-        attenuate -= readRE();
-        if (attenuate < 0) {
-            attenuate = 0;
-        } else if (attenuate > ATTENUATE_LIMIT) {
-            attenuate = ATTENUATE_LIMIT;
-        }
+        LCD_SetPos(0, 0);
+        sprintf(buff1, "%d ", key);
+    	LCD_Puts(buff1);
+        CyDelay(100);
         */
-
-        re_v = readRE();
-        if (re_v != 0) {
-            lcdContrast += re_v;
-            if (lcdContrast < 0) {
-                lcdContrast = 0;
-            } else if (lcdContrast > LCD_CONTRAST_LIMIT) {
-                lcdContrast = LCD_CONTRAST_LIMIT;
-            }
-            LCD_SetContrast(lcdContrast);
-        }
         
-        if (lcdStat != LCD_ON && key == CMD_LCD_ON) {
-            switchLCD(LCD_ON);
-            lcdStat = LCD_ON;
-        }
-        if (lcdStat != LCD_OFF && key == CMD_LCD_OFF){
-            switchLCD(LCD_OFF);
-            lcdStat = LCD_OFF;
+    	switch (key) {
+    	case 0:
+    	case 1:
+    	case 2:
+    	case 3:
+    	case 4:
+    	case 5:
+    	case 6:
+    	case 7:
+    	case 8:
+    	case 9:
+    		switch (currentMode) {
+    		case MODE_NORMAL:
+    			currentMode = MODE_FREQUENCY;
+                kbp = 0;
+    		case MODE_FREQUENCY:
+    			if (kbp < KEY_BUFFER_LENGTH) {
+    				keyBuffer[kbp] = key;
+    				kbp++;
+    			}
+    			isDirty = 1;
+                LCD_SetCursor(0, 1);
+    			break;
+    		case MODE_WAVEFORM:
+    			if (0 <= key && key < WAVEFORM_N) {
+    				waveForm = key;
+    			}
+    			isDirty = 1;
+    			break;
+    		}
+    		break;
+    	case CMD_CLR:
+    		if (currentMode == MODE_FREQUENCY) {
+    			kbp = 0;
+    		}
+            isDirty = 1;
+    		break;
+    	case CMD_ENT:
+    		currentMode = MODE_NORMAL;
+    		frequency = keyBuffer2int();
+    		setDDSParameter_0(frequency);
+    		//kbp = 0;
+            LCD_SetCursor(0, 0);
+    		break;
+    	case CMD_CANCEL:
+    		switch (currentMode) {
+    		case MODE_FREQUENCY:
+    			currentMode = MODE_NORMAL;
+    			//kbp = 0;
+    			break;
+    		case MODE_WAVEFORM:
+    			currentMode = MODE_NORMAL;
+    			break;
+    		case MODE_CONFIG:
+    			currentMode = MODE_NORMAL;
+    			break;
+    		}
+    		isDirty = 1;
+    		break;
+    	case CMD_MODE:
+    		switch (currentMode) {
+    		case MODE_NORMAL:
+    			currentMode = MODE_WAVEFORM;
+    			break;
+    		case MODE_WAVEFORM:
+    			currentMode = MODE_CONFIG;
+    			break;
+    		case MODE_CONFIG:
+    			currentMode = MODE_NORMAL;
+    			break;
+    		}
+    		isDirty = 1;
+    		break;
+        /*
+         * 動作不良のため保留
+         *
+    	case CMD_LCD_ON:
+    		if (lcdStat != LCD_ON) {
+    			switchLCD(LCD_ON);
+    			lcdStat = LCD_ON;
+    		}
+            isDirty = 1;
+    		break;
+    	case CMD_LCD_OFF:
+    		if (lcdStat != LCD_OFF) {
+    			switchLCD(LCD_OFF);
+    			lcdStat = LCD_OFF;
+    		}
+    		break;
+        */
+    	}
+    	
+    	// ロータリーエンコーダーの処理
+    	//
+    	re_v = readRE();
+    	if (re_v != 0) {
+    		switch (currentMode) {
+    		case MODE_NORMAL:
+    			// ToDo: 周波数増減
+    			break;
+    		case MODE_FREQUENCY:
+    			// do nothing
+    			break;
+    		case MODE_WAVEFORM:
+    			// attenuate
+    			attenuate -= re_v;
+    			attenuate = constrain(attenuate, 0, ATTENUATE_LIMIT);
+    			isDirty = 1;
+    			break;
+    		case MODE_CONFIG:
+    			lcdContrast += re_v;
+    			constrain(lcdContrast, 0, LCD_CONTRAST_LIMIT);
+    			LCD_SetContrast(lcdContrast);
+    			isDirty = 1;
+    			break;
+    		}
+    	}
+    	
+    	// 電源電圧測定
+    	//
+    	supplyVoltage = measureSupplyVoltage();
+    	// ToDo: 下限値以下に成った場合アラート。
+    	
+    	// 表示文字列
+    	//
+    	if (((lcdStat != LCD_OFF) && isDirty) || (currentMode == MODE_FIRSTTIME)) {
+    		switch (currentMode) {
+            case MODE_FIRSTTIME:
+                 currentMode = MODE_NORMAL;
+    		case MODE_NORMAL:
+    			sprintf(buff1, "%8d", frequency);
+    			sprintf(buff2, "%s A:%d", strWaveForm[waveForm], attenuate);
+    			break;
+    		case MODE_FREQUENCY:
+    			sprintf(buff1, "%8d", keyBuffer2int());
+    			sprintf(buff2, "%s A:%d", strWaveForm[waveForm], attenuate);
+    			break;
+    		case MODE_WAVEFORM:
+    			sprintf(buff1, "WAV:%s", strWaveForm[waveForm]);
+    			sprintf(buff2, "ATT:%d   ", attenuate);
+    			break;
+    		case MODE_CONFIG:
+    			sprintf(buff1, "%6ldmV", supplyVoltage);
+    			sprintf(buff2, "CONT:%d", lcdContrast);
+    			break;
+    		}
+    		
+    		LCD_SetPos(0, 0);
+    		LCD_Puts(buff1);
+    		LCD_SetPos(0, 1);
+    		LCD_Puts(buff2);
+            
+            if (currentMode == MODE_FREQUENCY) {
+                LCD_SetPos(7, 0);
+            }
         }
 
-        // ToDo: LCD書き換えの条件を修正: attenuateの更新時
-        if (lcdStat != LCD_OFF && key != -1) {
-            LCD_SetPos(0, 0);
-            LCD_Puts(buff1);
-            LCD_SetPos(0, 1);
-            LCD_Puts(buff2);
-        }
-        //CyDelay(100);
+        //CyDelay(1);
+        
 #endif // DDS_ONLY        
     }
 }

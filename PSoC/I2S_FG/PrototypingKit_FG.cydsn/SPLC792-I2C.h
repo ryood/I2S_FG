@@ -9,6 +9,7 @@
  *
  * "I2CM_LCD"という名前で"I2C(SCB mode)"コンポーネントを作成してください。
  *
+ * 2016.03.03 カーソル設定関数を追加
  * 2016.02.24 コントラスト設定関数を追加
  * 2015.11.09 PSoC5LP用にI2C Masterコンポーネント(UDB)を使用
  *
@@ -37,6 +38,7 @@ void LCD_Clear();
 void LCD_SetPos(uint32 x, uint32 y);
 void LCD_Puts(char8 *s);
 void LCD_SetContrast(uint8 contrast);
+void LCD_SetCursor(uint8 cursor_on, uint8 cursor_blink);
 
 #endif  //_SPLC792_I2C_H_
 

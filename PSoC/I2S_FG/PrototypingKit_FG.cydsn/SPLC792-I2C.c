@@ -119,4 +119,13 @@ void LCD_SetContrast(uint8 contrast)
     
 }
 
+// カーソル設定
+// DisplayはOnになります
+void LCD_SetCursor(uint8 cursor_on, uint8 cursor_blink)
+{
+    uint8 cb, bb;
+    cb = cursor_on ? 1 : 0;
+    bb = cursor_blink ? 1: 0;
+    LCD_Cmd(0b00001100 | (cb << 1) | (bb << 0));
+}
 /* [] END OF FILE */
