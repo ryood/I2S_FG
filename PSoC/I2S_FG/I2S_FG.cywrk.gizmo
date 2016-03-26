@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9_8192.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\UI_Test">
 <ExpandedNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS\TopDesign</v>
@@ -527,6 +527,7 @@
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyfitter_cfg.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -655,6 +656,7 @@
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides</v>
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides\cy_boot_v5_20</v>
 <v>I2S_FG\PrototypingKit_FG_Test\ADC_DelSig_v3_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>

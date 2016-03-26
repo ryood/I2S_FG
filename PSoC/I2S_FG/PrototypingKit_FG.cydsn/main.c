@@ -20,10 +20,10 @@
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160303")
+#define TITLE_STR2  ("20160321")
 
 // Defines for DDS
-#define SAMPLE_CLOCK    312500u
+#define SAMPLE_CLOCK    192000u
 #define FREQUENCY_INIT  1000
 
 #define TABLE_SIZE      32768
