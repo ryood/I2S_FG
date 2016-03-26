@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\UI_Test">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9_8192.h">
 <ExpandedNodeIds>
 <v>I2S_FG</v>
 <v>I2S_FG\PrototypingKit_DDS\TopDesign</v>
@@ -528,6 +528,8 @@
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyFlash.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CyLib.lst</v>
 <v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cymetadata.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\cyPm.lst</v>
+<v>I2S_FG\PrototypingKit_DDS\CortexM3\ARM_GCC_493\Release\Listing Files\CySpc.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -657,6 +659,8 @@
 <v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides\cy_boot_v5_20</v>
 <v>I2S_FG\PrototypingKit_FG_Test\ADC_DelSig_v3_20.pdf</v>
 <v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20</v>
+<v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\cy_dma_v1_70.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -666,31 +670,31 @@
 <CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
 <indicators>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="449" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="451" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="93" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="95" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="261" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="263" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="414" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="416" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="369" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
-</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
-<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="417" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="371" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
 <CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="418" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="436" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="420" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="442" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="438" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
+<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="444" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 </indicators>
 </CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>

@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.03.27 Sampling Rateを382kHzに (ダイ温度測定)
  * 2016.03.03 UIを整理
  * 2016.03.01 created
  *
@@ -14,19 +15,19 @@
 */
 #include <project.h>
 #include <stdio.h>
-#include "wavetable32_0_9_32768.h"
+#include "wavetable32_0_9_8192.h"
 #include "SPLC792-I2C.h"
 
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160321")
+#define TITLE_STR2  ("20160327")
 
 // Defines for DDS
-#define SAMPLE_CLOCK    192000u
-#define FREQUENCY_INIT  1000
+#define SAMPLE_CLOCK    384000u
+#define FREQUENCY_INIT  10000
 
-#define TABLE_SIZE      32768
+#define TABLE_SIZE      8192
 #define BUFFER_SIZE     4     
 
 /* Defines for DMA_0 */
@@ -65,6 +66,7 @@
 #define LCD_CONTRAST_LIMIT  63
 
 #define ATTENUATE_LIMIT 8
+#define ATTENUATE_INIT 0
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -114,7 +116,7 @@ void generateWave_0()
         // ex)
         //  1024  = 2^10 : 32 - 10 = 22
         //  32768 = 2^15 : 32 - 15 = 17 
-        index = phaseRegister_0 >> 17;
+        index = phaseRegister_0 >> 19;
 
         // 右シフトで出力レベルを減衰
         v = (sineTable[index] >> attenuate);
@@ -330,7 +332,7 @@ int main()
     
     frequency = FREQUENCY_INIT;
     setKeyBufferWithInt(frequency);
-    attenuate = 0;
+    attenuate = ATTENUATE_INIT;
     
     setDDSParameter_0(frequency);
     generateWave_0();
