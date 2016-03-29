@@ -539,7 +539,7 @@ function getElementsByClass(rootNode, elemName, className)
 <tr> <td class="prop"> Project :</td>
 <td class="proptext"> PrototypingKit_FG</td></tr>
 <tr> <td class="prop"> Build Time :</td>
-<td class="proptext"> 03/27/16 07:52:02</td></tr>
+<td class="proptext"> 03/27/16 08:21:50</td></tr>
 <tr> <td class="prop"> Device :</td>
 <td class="proptext"> CY8C5888LTI-LP097</td></tr>
 <tr> <td class="prop"> Temperature :</td>
@@ -575,7 +575,28 @@ function getElementsByClass(rootNode, elemName, className)
 <span class="sec_head"><span style="font-family: monospace;">+</span>
 Timing Violation Section</span>
 </a>
-</div><div class="vio_sta_secbody"><div class="sta_sec_desc">No Timing Violations</div>
+</div><div class="vio_sta_secbody"><div class="sta_sec_desc">Note: If your design will only ever run at typical room temperatures, selecting the narrower temperature range in the system DWR for your application helps the tool to find timing-compliant routing solutions.</div>
+<table class="sta_tpd">
+ <thead> 
+<tr> 
+<th>Violation</th>
+<th>Source Clock</th>
+<th>Destination Clock</th>
+<th>Slack(ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td colspan="4" class = "text_info">Setup</td>
+</tr>
+<tr class="sta_tv tv1">
+ <td class = "text_info"> </td>
+ <td class = "text_info">CyBUS_CLK</td>
+ <td class = "text_info">CyBUS_CLK</td>
+ <td class = "number">-2.369</td>
+</tr>
+</tbody>
+ </table> 
 </div>
 </div>
 <div class="sta_sec" id="clock_summary">
@@ -599,16 +620,16 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">ADC_DelSig_Supply_Ext_CP_Clk</td>
  <td class = "text_info">ADC_DelSig_Supply_Ext_CP_Clk</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
  <td class = "text_info">ADC_DelSig_Supply_Ext_CP_Clk(routed)</td>
  <td class = "text_info">ADC_DelSig_Supply_Ext_CP_Clk(routed)</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -623,8 +644,8 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyBUS_CLK(fixed-function)</td>
  <td class = "text_info">CyBUS_CLK(fixed-function)</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -647,18 +668,18 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyMASTER_CLK</td>
  <td class = "text_info">CyMASTER_CLK</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
  <td class = "text_info">CyBUS_CLK</td>
  <td class = "text_info">CyMASTER_CLK</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">59.358&nbsp;MHz</td>
- <td class = "text_info"></td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">67.254&nbsp;MHz</td>
+ <td class = "text_info violation_color">Frequency</td>
 </tr>
 <tr> 
  <td class = "text_info">Clock_I2S</td>
@@ -687,8 +708,8 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyPLL_OUT</td>
  <td class = "text_info">CyPLL_OUT</td>
- <td class = "number">40.000&nbsp;MHz</td>
- <td class = "number">40.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
+ <td class = "number">80.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -774,7 +795,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/clock</td>
@@ -788,11 +809,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:tx_f0_empty_0\</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/f0_blk_stat_comb</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_3</td>
- <td class = "number">2.093</td>
+ <td class = "number">2.090</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_3</td>
@@ -806,11 +827,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">2.101</td>
+ <td class = "number">2.104</td>
 </tr>
 <tr> 
  <td class = "text_info">statusicell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
  <td class = "text_info"></td>
@@ -833,9 +854,9 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/q</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">114.877&nbsp;MHz</td>
- <td class = "number">8.705</td>
- <td class = "number">16.295</td>
+ <td class = "number">114.286&nbsp;MHz</td>
+ <td class = "number">8.750</td>
+ <td class = "number">16.250</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -855,7 +876,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">macrocell8</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/clock_0</td>
@@ -869,11 +890,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/q</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_1</td>
- <td class = "number">3.034</td>
+ <td class = "number">3.076</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_1</td>
@@ -887,11 +908,173 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">2.101</td>
+ <td class = "number">2.104</td>
 </tr>
 <tr> 
  <td class = "text_info">statusicell1</td>
+ <td class = "text_info">U(2,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">0.350</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
+ <td class = "number">114.351&nbsp;MHz</td>
+ <td class = "number">8.745</td>
+ <td class = "number">16.255</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">macrocell9</td>
  <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/clock_0</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
+ <td class = "number">0.875</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_2</td>
+ <td class = "number">3.071</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell1</td>
+ <td class = "text_info">U(2,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_2</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
+ <td class = "number">2.345</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
+ <td class = "number">2.104</td>
+</tr>
+<tr> 
+ <td class = "text_info">statusicell1</td>
+ <td class = "text_info">U(2,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">0.350</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
+ <td class = "number">117.192&nbsp;MHz</td>
+ <td class = "number">8.533</td>
+ <td class = "number">16.467</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">macrocell7</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\/clock_0</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
+ <td class = "number">0.875</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_0</td>
+ <td class = "number">2.859</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell1</td>
+ <td class = "text_info">U(2,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_0</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
+ <td class = "number">2.345</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
+ <td class = "number">2.104</td>
+</tr>
+<tr> 
+ <td class = "text_info">statusicell1</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
  <td class = "text_info"></td>
@@ -914,9 +1097,9 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_2</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/enable</td>
- <td class = "number">118.511&nbsp;MHz</td>
- <td class = "number">8.438</td>
- <td class = "number">16.562</td>
+ <td class = "number">118.357&nbsp;MHz</td>
+ <td class = "number">8.449</td>
+ <td class = "number">16.551</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -936,7 +1119,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">controlcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:CtlReg\</td>
  <td class = "text_info">\I2S_1:bI2S:CtlReg\/clock</td>
@@ -950,11 +1133,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:ctrl_2\</td>
  <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_2</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/enable</td>
- <td class = "number">4.751</td>
+ <td class = "number">4.762</td>
 </tr>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info"></td>
@@ -976,10 +1159,10 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 </tr>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">118.991&nbsp;MHz</td>
- <td class = "number">8.404</td>
- <td class = "number">16.596</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_0</td>
+ <td class = "number">120.598&nbsp;MHz</td>
+ <td class = "number">8.292</td>
+ <td class = "number">16.708</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -999,7 +1182,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">macrocell9</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\/clock_0</td>
@@ -1012,116 +1195,17 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_2</td>
- <td class = "number">2.733</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_0</td>
+ <td class = "number">3.087</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell1</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_2</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
- <td class = "number">2.345</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">2.101</td>
-</tr>
-<tr> 
- <td class = "text_info">statusicell1</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">0.350</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">119.033&nbsp;MHz</td>
- <td class = "number">8.401</td>
- <td class = "number">16.599</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">macrocell7</td>
+ <td class = "text_info">datapathcell1</td>
  <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\/clock_0</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
- <td class = "number">0.875</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_0</td>
- <td class = "number">2.730</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell1</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/main_0</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
- <td class = "number">2.345</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\/status_0</td>
- <td class = "number">2.101</td>
-</tr>
-<tr> 
- <td class = "text_info">statusicell1</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:STS[0]:Sts\</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
- <td class = "number">0.350</td>
+ <td class = "number">4.330</td>
 </tr>
 <tr> 
  <td class = "text_info">Clock</td>
@@ -1161,7 +1245,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">macrocell8</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/clock_0</td>
@@ -1179,7 +1263,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 </tr>
 <tr> 
  <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info"></td>
@@ -1202,9 +1286,9 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_2</td>
- <td class = "number">123.396&nbsp;MHz</td>
- <td class = "number">8.104</td>
- <td class = "number">16.896</td>
+ <td class = "number">125.881&nbsp;MHz</td>
+ <td class = "number">7.944</td>
+ <td class = "number">17.056</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1224,7 +1308,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_2\/clock_0</td>
@@ -1238,74 +1322,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">\I2S_1:bI2S:tx_state_2\</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_2\/q</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_2</td>
- <td class = "number">2.899</td>
+ <td class = "number">2.739</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">4.330</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_0</td>
- <td class = "number">123.701&nbsp;MHz</td>
- <td class = "number">8.084</td>
- <td class = "number">16.916</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">macrocell9</td>
  <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/clock_0</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
- <td class = "number">0.875</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/q</td>
- <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/cs_addr_0</td>
- <td class = "number">2.879</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info"></td>
@@ -1327,10 +1348,10 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 </tr>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
- <td class = "text_info">Net_5_0/main_0</td>
- <td class = "number">124.782&nbsp;MHz</td>
- <td class = "number">8.014</td>
- <td class = "number">16.986</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_8</td>
+ <td class = "number">130.685&nbsp;MHz</td>
+ <td class = "number">7.652</td>
+ <td class = "number">17.348</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1350,7 +1371,7 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -1363,14 +1384,14 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "number">1</td>
  <td class = "text_info">Net_3</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
- <td class = "text_info">Net_5_0/main_0</td>
- <td class = "number">4.197</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_8</td>
+ <td class = "number">3.835</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell10</td>
- <td class = "text_info">U(2,2)</td>
+ <td class = "text_info">macrocell6</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">Net_5_0</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">2.457</td>
@@ -1389,11 +1410,11 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_8</td>
- <td class = "number">138.850&nbsp;MHz</td>
- <td class = "number">7.202</td>
- <td class = "number">17.798</td>
+ <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_2</td>
+ <td class = "text_info">\I2S_1:bI2S:reset\/main_0</td>
+ <td class = "number">140.292&nbsp;MHz</td>
+ <td class = "number">7.128</td>
+ <td class = "number">17.872</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1412,28 +1433,28 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">count7cell</td>
+ <td class = "text_info">controlcell1</td>
  <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
- <td class = "number">1.360</td>
+ <td class = "text_info">\I2S_1:bI2S:CtlReg\</td>
+ <td class = "text_info">\I2S_1:bI2S:CtlReg\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_2</td>
+ <td class = "number">0.847</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">Net_3</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_8</td>
- <td class = "number">3.385</td>
+ <td class = "text_info">\I2S_1:bI2S:ctrl_2\</td>
+ <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_2</td>
+ <td class = "text_info">\I2S_1:bI2S:reset\/main_0</td>
+ <td class = "number">3.824</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
+ <td class = "text_info">macrocell3</td>
  <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\</td>
+ <td class = "text_info">\I2S_1:bI2S:reset\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">2.457</td>
@@ -1461,15 +1482,15 @@ Destination Clock : Clock_I2S : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Source Clock : CyBUS_CLK : Positive edge(Required Frequency 40&nbsp;MHz)</span>
+Source Clock : CyBUS_CLK : Positive edge(Required Frequency 80&nbsp;MHz)</span>
 </a>
 </div><div class="sta_secbody"><div class="sta_sec" >
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Destination Clock : CyBUS_CLK : Positive edge(Required Frequency 40&nbsp;MHz)</span>
+Destination Clock : CyBUS_CLK : Positive edge(Required Frequency 80&nbsp;MHz)</span>
 </a>
-</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 25ns(40&nbsp;MHz)</div>
+</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 12.5ns(80&nbsp;MHz)</div>
 <table class="sta_tscs">
  <thead> 
 <tr> 
@@ -1485,12 +1506,12 @@ Destination Clock : CyBUS_CLK : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/f0_bus_stat_comb</td>
  <td class = "text_info">DMA_0/dmareq</td>
- <td class = "number">59.358&nbsp;MHz</td>
- <td class = "number">16.847</td>
- <td class = "number">8.153</td>
- <td class = "text_info"></td>
+ <td class = "number">67.254&nbsp;MHz</td>
+ <td class = "number">14.869</td>
+ <td class = "number violation_color">-2.369</td>
+ <td class = "text_info violation_color">SETUP</td>
 </tr>
-<tr class="sta_path">
+<tr class="sta_path tv1">
 <td class="sta_path"  colspan="6">
 <table class="sta_path">
  <thead> 
@@ -1507,7 +1528,7 @@ Destination Clock : CyBUS_CLK : Positive edge(Required Frequency 40&nbsp;MHz)</s
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/busclk</td>
@@ -1521,7 +1542,7 @@ Destination Clock : CyBUS_CLK : Positive edge(Required Frequency 40&nbsp;MHz)</s
  <td class = "text_info">Net_73_0</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/f0_bus_stat_comb</td>
  <td class = "text_info">DMA_0/dmareq</td>
- <td class = "number">9.697</td>
+ <td class = "number">7.719</td>
 </tr>
 <tr> 
  <td class = "text_info">drqcell1</td>
@@ -1582,6 +1603,67 @@ Destination Clock : Clock_I2S : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_3</td>
+ <td class = "number">2.536</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">count7cell</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
+ <td class = "number">0.430</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:count_5\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_3</td>
+ <td class = "number">2.106</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell6</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_4</td>
  <td class = "text_info">\I2S_1:bI2S:txenable\/main_4</td>
  <td class = "number">2.558</td>
@@ -1604,7 +1686,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -1622,313 +1704,8 @@ Destination Clock : Clock_I2S : Positive edge</span>
 </tr>
 <tr> 
  <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_3</td>
- <td class = "number">2.560</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
- <td class = "number">0.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:count_5\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_5</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_3</td>
- <td class = "number">2.130</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_3</td>
- <td class = "number">2.834</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "number">0.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:count_1\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_3</td>
- <td class = "number">2.404</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell8</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_3</td>
- <td class = "number">2.834</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "number">0.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:count_1\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_3</td>
- <td class = "number">2.404</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell9</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_sticky\/main_0</td>
- <td class = "number">2.843</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">controlcell1</td>
  <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "number">0.252</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:ctrl_0\</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_sticky\/main_0</td>
- <td class = "number">2.591</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell5</td>
- <td class = "text_info">U(3,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:tx_underflow_sticky\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_7</td>
- <td class = "number">2.845</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "number">0.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
- <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:count_1\</td>
- <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_7</td>
- <td class = "number">2.415</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(2,1)</td>
- <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:txenable\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
@@ -1948,9 +1725,9 @@ Destination Clock : Clock_I2S : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_1</td>
- <td class = "number">2.851</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/so_comb</td>
+ <td class = "text_info">Net_5_0/main_1</td>
+ <td class = "number">2.676</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1969,28 +1746,28 @@ Destination Clock : Clock_I2S : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">controlcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/clock</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "number">0.252</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/so_comb</td>
+ <td class = "number">0.560</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:ctrl_0\</td>
- <td class = "text_info">\I2S_1:bI2S:CtlReg\/control_0</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\/main_1</td>
- <td class = "number">2.599</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_data_out_0\</td>
+ <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/so_comb</td>
+ <td class = "text_info">Net_5_0/main_1</td>
+ <td class = "number">2.116</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
+ <td class = "text_info">macrocell10</td>
  <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\I2S_1:bI2S:txenable\</td>
+ <td class = "text_info">Net_5_0</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -2011,7 +1788,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_2</td>
- <td class = "number">2.862</td>
+ <td class = "number">2.836</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2031,7 +1808,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -2045,11 +1822,11 @@ Destination Clock : Clock_I2S : Positive edge</span>
  <td class = "text_info">\I2S_1:bI2S:count_2\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_2</td>
- <td class = "number">2.432</td>
+ <td class = "number">2.406</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell8</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
  <td class = "text_info"> </td>
@@ -2072,7 +1849,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_2</td>
- <td class = "number">2.862</td>
+ <td class = "number">2.836</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2092,7 +1869,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -2106,11 +1883,194 @@ Destination Clock : Clock_I2S : Positive edge</span>
  <td class = "text_info">\I2S_1:bI2S:count_2\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_2</td>
- <td class = "number">2.432</td>
+ <td class = "number">2.406</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell9</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">Net_4/main_1</td>
+ <td class = "number">2.838</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">count7cell</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "number">0.430</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:count_6\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">Net_4/main_1</td>
+ <td class = "number">2.408</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell4</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">Net_4</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_0</td>
+ <td class = "number">2.838</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">count7cell</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "number">0.430</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:count_6\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_1\/main_0</td>
+ <td class = "number">2.408</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell8</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_1\</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_0</td>
+ <td class = "number">2.838</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">count7cell</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "number">0.430</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:count_6\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:tx_state_0\/main_0</td>
+ <td class = "number">2.408</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell9</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:tx_state_0\</td>
  <td class = "text_info"> </td>
@@ -2133,7 +2093,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:txenable\/main_6</td>
- <td class = "number">2.874</td>
+ <td class = "number">2.850</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2153,7 +2113,7 @@ Destination Clock : Clock_I2S : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -2167,11 +2127,72 @@ Destination Clock : Clock_I2S : Positive edge</span>
  <td class = "text_info">\I2S_1:bI2S:count_2\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_2</td>
  <td class = "text_info">\I2S_1:bI2S:txenable\/main_6</td>
- <td class = "number">2.444</td>
+ <td class = "number">2.420</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_2</td>
+ <td class = "number">2.853</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">count7cell</td>
+ <td class = "text_info">U(3,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "number">0.430</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
+ <td class = "number">1</td>
+ <td class = "text_info">\I2S_1:bI2S:count_6\</td>
+ <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_6</td>
+ <td class = "text_info">\I2S_1:bI2S:txenable\/main_2</td>
+ <td class = "number">2.423</td>
+</tr>
+<tr> 
+ <td class = "text_info">macrocell6</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:txenable\</td>
  <td class = "text_info"> </td>
@@ -2222,7 +2243,7 @@ Destination Clock : CyBUS_CLK : Positive edge</span>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/f0_bus_stat_comb</td>
  <td class = "text_info">DMA_0/dmareq</td>
- <td class = "number">11.877</td>
+ <td class = "number">9.899</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2242,7 +2263,7 @@ Destination Clock : CyBUS_CLK : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell1</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/busclk</td>
@@ -2256,7 +2277,7 @@ Destination Clock : CyBUS_CLK : Positive edge</span>
  <td class = "text_info">Net_73_0</td>
  <td class = "text_info">\I2S_1:bI2S:Tx:CH[0]:dpTx:u0\/f0_bus_stat_comb</td>
  <td class = "text_info">DMA_0/dmareq</td>
- <td class = "number">9.697</td>
+ <td class = "number">7.719</td>
 </tr>
 <tr> 
  <td class = "text_info">drqcell1</td>
@@ -2314,7 +2335,7 @@ Clock_Debouncer_RE</span>
 <tr> 
  <td class = "text_info">Pin_RE1_IN(1)_PAD</td>
  <td class = "text_info">Net_257/main_0</td>
- <td class = "number">16.811</td>
+ <td class = "number">15.788</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2356,11 +2377,11 @@ Clock_Debouncer_RE</span>
  <td class = "text_info">Net_264</td>
  <td class = "text_info">Pin_RE1_IN(1)/fb</td>
  <td class = "text_info">Net_257/main_0</td>
- <td class = "number">6.392</td>
+ <td class = "number">5.369</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell12</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(3,4)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_257</td>
  <td class = "text_info"> </td>
@@ -2383,7 +2404,7 @@ Clock_Debouncer_RE</span>
 <tr> 
  <td class = "text_info">Pin_RE1_IN(0)_PAD</td>
  <td class = "text_info">Net_266/main_0</td>
- <td class = "number">16.075</td>
+ <td class = "number">14.851</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2425,11 +2446,11 @@ Clock_Debouncer_RE</span>
  <td class = "text_info">Net_243</td>
  <td class = "text_info">Pin_RE1_IN(0)/fb</td>
  <td class = "text_info">Net_266/main_0</td>
- <td class = "number">5.696</td>
+ <td class = "number">4.472</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell11</td>
- <td class = "text_info">U(3,2)</td>
+ <td class = "text_info">U(3,4)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_266</td>
  <td class = "text_info"> </td>
@@ -2479,7 +2500,7 @@ Clock_Debouncer_RE</span>
 <tr> 
  <td class = "text_info">Net_257/q</td>
  <td class = "text_info">Pin_RE1(1)_PAD</td>
- <td class = "number">24.108</td>
+ <td class = "number">22.972</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2498,7 +2519,7 @@ Clock_Debouncer_RE</span>
 <tbody>
 <tr> 
  <td class = "text_info">macrocell12</td>
- <td class = "text_info">U(3,1)</td>
+ <td class = "text_info">U(3,4)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_257</td>
  <td class = "text_info">Net_257/clock_0</td>
@@ -2512,7 +2533,7 @@ Clock_Debouncer_RE</span>
  <td class = "text_info">Net_257</td>
  <td class = "text_info">Net_257/q</td>
  <td class = "text_info">Pin_RE1(1)/pin_input</td>
- <td class = "number">7.489</td>
+ <td class = "number">6.353</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell22</td>
@@ -2548,7 +2569,7 @@ Clock_Debouncer_RE</span>
 <tr> 
  <td class = "text_info">Net_266/q</td>
  <td class = "text_info">Pin_RE1(0)_PAD</td>
- <td class = "number">23.743</td>
+ <td class = "number">21.779</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2567,7 +2588,7 @@ Clock_Debouncer_RE</span>
 <tbody>
 <tr> 
  <td class = "text_info">macrocell11</td>
- <td class = "text_info">U(3,2)</td>
+ <td class = "text_info">U(3,4)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_266</td>
  <td class = "text_info">Net_266/clock_0</td>
@@ -2581,7 +2602,7 @@ Clock_Debouncer_RE</span>
  <td class = "text_info">Net_266</td>
  <td class = "text_info">Net_266/q</td>
  <td class = "text_info">Pin_RE1(0)/pin_input</td>
- <td class = "number">7.409</td>
+ <td class = "number">5.445</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell21</td>
@@ -2636,7 +2657,7 @@ Clock_I2S</span>
 <tr> 
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
  <td class = "text_info">SCK_1(0)_PAD</td>
- <td class = "number">24.335</td>
+ <td class = "number">24.796</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2655,7 +2676,7 @@ Clock_I2S</span>
 <tbody>
 <tr> 
  <td class = "text_info">count7cell</td>
- <td class = "text_info">U(2,1)</td>
+ <td class = "text_info">U(3,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/clock</td>
@@ -2669,7 +2690,7 @@ Clock_I2S</span>
  <td class = "text_info">Net_3</td>
  <td class = "text_info">\I2S_1:bI2S:BitCounter\/count_0</td>
  <td class = "text_info">SCK_1(0)/pin_input</td>
- <td class = "number">7.594</td>
+ <td class = "number">8.055</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell2</td>
@@ -2705,7 +2726,7 @@ Clock_I2S</span>
 <tr> 
  <td class = "text_info">Net_5_0/q</td>
  <td class = "text_info">SDO_1(0)_PAD</td>
- <td class = "number">23.719</td>
+ <td class = "number">23.456</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2724,7 +2745,7 @@ Clock_I2S</span>
 <tbody>
 <tr> 
  <td class = "text_info">macrocell10</td>
- <td class = "text_info">U(2,2)</td>
+ <td class = "text_info">U(2,1)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_5_0</td>
  <td class = "text_info">Net_5_0/clock_0</td>
@@ -2738,7 +2759,7 @@ Clock_I2S</span>
  <td class = "text_info">Net_5_0</td>
  <td class = "text_info">Net_5_0/q</td>
  <td class = "text_info">SDO_1(0)/pin_input</td>
- <td class = "number">7.773</td>
+ <td class = "number">7.510</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell1</td>
@@ -2774,7 +2795,7 @@ Clock_I2S</span>
 <tr> 
  <td class = "text_info">Net_4/q</td>
  <td class = "text_info">WS_1(0)_PAD</td>
- <td class = "number">23.404</td>
+ <td class = "number">23.398</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2807,7 +2828,7 @@ Clock_I2S</span>
  <td class = "text_info">Net_4</td>
  <td class = "text_info">Net_4/q</td>
  <td class = "text_info">WS_1(0)/pin_input</td>
- <td class = "number">7.187</td>
+ <td class = "number">7.181</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell3</td>
@@ -2862,7 +2883,7 @@ CyBUS_CLK(fixed-function)</span>
 <tr> 
  <td class = "text_info">\I2CM_LCD:I2C_FF\/scl_out</td>
  <td class = "text_info">Pin_I2C_SCL(0)_PAD:out</td>
- <td class = "number">23.738</td>
+ <td class = "number">23.898</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2895,7 +2916,7 @@ CyBUS_CLK(fixed-function)</span>
  <td class = "text_info">\I2CM_LCD:Net_643_0\</td>
  <td class = "text_info">\I2CM_LCD:I2C_FF\/scl_out</td>
  <td class = "text_info">Pin_I2C_SCL(0)/pin_input</td>
- <td class = "number">7.759</td>
+ <td class = "number">7.919</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell16</td>
@@ -2931,7 +2952,7 @@ CyBUS_CLK(fixed-function)</span>
 <tr> 
  <td class = "text_info">\I2CM_LCD:I2C_FF\/sda_out</td>
  <td class = "text_info">Pin_I2C_SDA(0)_PAD:out</td>
- <td class = "number">23.376</td>
+ <td class = "number">23.225</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2964,7 +2985,7 @@ CyBUS_CLK(fixed-function)</span>
  <td class = "text_info">\I2CM_LCD:sda_x_wire\</td>
  <td class = "text_info">\I2CM_LCD:I2C_FF\/sda_out</td>
  <td class = "text_info">Pin_I2C_SDA(0)/pin_input</td>
- <td class = "number">7.756</td>
+ <td class = "number">7.605</td>
 </tr>
 <tr> 
  <td class = "text_info">iocell15</td>

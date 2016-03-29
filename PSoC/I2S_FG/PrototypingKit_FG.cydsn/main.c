@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.03.27 ノコギリ波の出力
  * 2016.03.27 Sampling Rateを382kHzに (ダイ温度測定)
  * 2016.03.03 UIを整理
  * 2016.03.01 created
@@ -41,8 +42,9 @@
 #define MODE_NORMAL		0
 #define MODE_FREQUENCY	1
 #define MODE_WAVEFORM	2
-#define MODE_CONFIG		3
-#define MODE_N			4
+#define MODE_CONTRAST	3
+#define MODE_STATUS     4
+#define MODE_N			5
 
 #define CMD_LCD_ON  10
 #define CMD_LCD_OFF 11
@@ -82,7 +84,8 @@ volatile int8 attenuate;
 volatile int waveForm;
 
 const char *strWaveForm[] = {
-	"SIN ", "TRI ", "SW1 ", "SW2 ", "SQR "
+    // "SIN ", "TRI ", "SW1 ", "SW2 ", "SQR "
+    "SIN ", "SIN ", "SAW ", "SAW ", "SIN "
 };
 
 const int POW10[] = {
@@ -97,6 +100,8 @@ int lcdStat = 0;
 int lcdContrast = LCD_CONTRAST_INIT;
 
 int32 supplyVoltage;
+int16 dieTemp;
+cystatus dieTempStatus;
 
 void setDDSParameter_0(uint32 frequency)
 {
@@ -107,6 +112,16 @@ void generateWave_0()
 {
     int i, index;
     int32 v;
+    const int32 *table_p;
+    
+    switch (waveForm) {
+    case WAVEFORM_SW1:
+    case WAVEFORM_SW2:
+        table_p = sawupTable;
+        break;
+    default:
+        table_p = sineTable;
+    }
     
     // 波形をバッファに転送
     // Todo: BUFFER_SIZEが4の場合はforループを外す。
@@ -119,7 +134,7 @@ void generateWave_0()
         index = phaseRegister_0 >> 19;
 
         // 右シフトで出力レベルを減衰
-        v = (sineTable[index] >> attenuate);
+        v = (table_p[index] >> attenuate);
         *((uint32 *)waveBuffer_0) = __REV(v);
     }
 }
@@ -453,9 +468,12 @@ int main()
     		case MODE_WAVEFORM:
     			currentMode = MODE_NORMAL;
     			break;
-    		case MODE_CONFIG:
+    		case MODE_CONTRAST:
     			currentMode = MODE_NORMAL;
     			break;
+            case MODE_STATUS:
+    			currentMode = MODE_NORMAL;
+    			break;    
     		}
     		isDirty = 1;
     		break;
@@ -465,11 +483,14 @@ int main()
     			currentMode = MODE_WAVEFORM;
     			break;
     		case MODE_WAVEFORM:
-    			currentMode = MODE_CONFIG;
+    			currentMode = MODE_CONTRAST;
     			break;
-    		case MODE_CONFIG:
-    			currentMode = MODE_NORMAL;
+    		case MODE_CONTRAST:
+    			currentMode = MODE_STATUS;
     			break;
+            case MODE_STATUS:
+                currentMode = MODE_NORMAL;
+                break;
     		}
     		isDirty = 1;
     		break;
@@ -511,7 +532,7 @@ int main()
     			attenuate = constrain(attenuate, 0, ATTENUATE_LIMIT);
     			isDirty = 1;
     			break;
-    		case MODE_CONFIG:
+    		case MODE_CONTRAST:
     			lcdContrast += re_v;
     			constrain(lcdContrast, 0, LCD_CONTRAST_LIMIT);
     			LCD_SetContrast(lcdContrast);
@@ -520,11 +541,17 @@ int main()
     		}
     	}
     	
-    	// 電源電圧測定
-    	//
-    	supplyVoltage = measureSupplyVoltage();
-    	// ToDo: 下限値以下に成った場合アラート。
-    	
+        if (currentMode == MODE_STATUS) {
+        	// 電源電圧測定
+        	//
+        	supplyVoltage = measureSupplyVoltage();
+        	// ToDo: 下限値以下に成った場合アラート。
+        
+            // ダイ温度測定
+            dieTempStatus = DieTemp_GetTemp(&dieTemp);
+            // ToDo: 上限値以上に成った場合アラート。
+        }
+        	
     	// 表示文字列
     	//
     	if (((lcdStat != LCD_OFF) && isDirty) || (currentMode == MODE_FIRSTTIME)) {
@@ -543,10 +570,20 @@ int main()
     			sprintf(buff1, "WAV:%s", strWaveForm[waveForm]);
     			sprintf(buff2, "ATT:%d   ", attenuate);
     			break;
-    		case MODE_CONFIG:
-    			sprintf(buff1, "%6ldmV", supplyVoltage);
-    			sprintf(buff2, "CONT:%d", lcdContrast);
+    		case MODE_CONTRAST:
+
+    			sprintf(buff1, "CONT:%d", lcdContrast);
+                sprintf(buff2, "        ");
     			break;
+            case MODE_STATUS:
+                sprintf(buff1, "%6ldmV", supplyVoltage);
+                if (dieTempStatus == CYRET_SUCCESS) {
+    			    sprintf(buff2, "%6d C", dieTemp);
+                    buff2[6] = 0b11110010;  // [°]
+                } else {
+                    sprintf(buff2, "ST:%d", (int8)dieTempStatus);
+                }
+                break;
     		}
     		
             //sprintf(buff2, "%8d", kbp);
