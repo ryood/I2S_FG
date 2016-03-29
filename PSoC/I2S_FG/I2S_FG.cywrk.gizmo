@@ -176,7 +176,55 @@
 <v>I2S_FG\PrototypingKit_FG_Test\TopDesign</v>
 <v>I2S_FG\UI_Test\TopDesign</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>I2S_FG</v>
+<v>I2S_FG\PrototypingKit_DDS</v>
+<v>I2S_FG\PrototypingKit_FG</v>
+<v>I2S_FG\PrototypingKit_FG\TopDesign</v>
+<v>I2S_FG\PrototypingKit_FG\PrototypingKit_FG.cydwr</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\cyapicallbacks.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\SPLC792-I2C.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable16_0_9.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9_2048.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9_32768.h</v>
+<v>I2S_FG\PrototypingKit_FG\Header Files\wavetable32_0_9_8192.h</v>
+<v>I2S_FG\PrototypingKit_FG\Source Files</v>
+<v>I2S_FG\PrototypingKit_FG\Source Files\main.c</v>
+<v>I2S_FG\PrototypingKit_FG\Source Files\SPLC792-I2C.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_INT.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply\ADC_DelSig_Supply_PM.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux\ADC_DelSig_Supply_AMux.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk\ADC_DelSig_Supply_Ext_CP_Clk.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ\ADC_DelSig_Supply_IRQ.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK\ADC_DelSig_Supply_theACLK.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_Debouncer_RE</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_Debouncer_RE\Clock_Debouncer_RE.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_Debouncer_RE\Clock_Debouncer_RE.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_I2S</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_I2S\Clock_I2S.c</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\Clock_I2S\Clock_I2S.h</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\cy_boot</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
+<v>I2S_FG\PrototypingKit_FG\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -194,7 +242,21 @@
 <v>I2S_FG\UI_Test\TopDesign</v>
 <v>I2S_FG\UI_Test\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>I2S_FG</v>
+<v>I2S_FG\PrototypingKit_DDS</v>
+<v>I2S_FG\PrototypingKit_DDS\TopDesign</v>
+<v>I2S_FG\PrototypingKit_DDS\TopDesign\TopDesign.cysch</v>
+<v>I2S_FG\PrototypingKit_FG</v>
+<v>I2S_FG\PrototypingKit_FG\TopDesign</v>
+<v>I2S_FG\PrototypingKit_FG\TopDesign\TopDesign.cysch</v>
+<v>I2S_FG\PrototypingKit_FG_Test</v>
+<v>I2S_FG\PrototypingKit_FG_Test\TopDesign</v>
+<v>I2S_FG\PrototypingKit_FG_Test\TopDesign\TopDesign.cysch</v>
+<v>I2S_FG\UI_Test</v>
+<v>I2S_FG\UI_Test\TopDesign</v>
+<v>I2S_FG\UI_Test\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -452,7 +514,10 @@
 <v>I2S_FG\UI_Test\CortexM3\ARM_GCC_493\Debug\UI_Test.map</v>
 <v>I2S_FG\UI_Test\UI_Test.gpdsc</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>I2S_FG</v>
+<v>I2S_FG\PrototypingKit_DDS</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -536,7 +601,55 @@
 <v>I2S_FG\UI_Test\I2C_v3_50.pdf</v>
 <v>I2S_FG\UI_Test\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>I2S_FG</v>
+<v>I2S_FG\PrototypingKit_DDS</v>
+<v>I2S_FG\PrototypingKit_DDS\PSoC 5 Architecture TRM</v>
+<v>I2S_FG\PrototypingKit_DDS\CY8C58LP Family Datasheet</v>
+<v>I2S_FG\PrototypingKit_DDS\System Reference Guides</v>
+<v>I2S_FG\PrototypingKit_DDS\System Reference Guides\cy_boot_v5_20</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_clock_v2_20</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_dma_v1_70.pdf</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_isr_v1_70</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_pins_v2_10</v>
+<v>I2S_FG\PrototypingKit_DDS\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>I2S_FG\PrototypingKit_DDS\Debouncer_v1_0</v>
+<v>I2S_FG\PrototypingKit_DDS\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_DDS\I2S_v2_60.pdf</v>
+<v>I2S_FG\PrototypingKit_FG</v>
+<v>I2S_FG\PrototypingKit_FG\PSoC 5 Architecture TRM</v>
+<v>I2S_FG\PrototypingKit_FG\CY8C58LP Family Datasheet</v>
+<v>I2S_FG\PrototypingKit_FG\System Reference Guides</v>
+<v>I2S_FG\PrototypingKit_FG\System Reference Guides\cy_boot_v5_20</v>
+<v>I2S_FG\PrototypingKit_FG\ADC_DelSig_v3_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\cy_clock_v2_20</v>
+<v>I2S_FG\PrototypingKit_FG\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\cy_dma_v1_70.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\cy_isr_v1_70.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\cy_pins_v2_10</v>
+<v>I2S_FG\PrototypingKit_FG\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\cy_pins_v2_20</v>
+<v>I2S_FG\PrototypingKit_FG\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\Debouncer_v1_0</v>
+<v>I2S_FG\PrototypingKit_FG\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\DieTemp_v2_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\Gnd_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\I2C_v3_50.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\I2S_v2_60.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\Power_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG\Resistor_v1_0</v>
+<v>I2S_FG\PrototypingKit_FG\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test</v>
+<v>I2S_FG\PrototypingKit_FG_Test\PSoC 5 Architecture TRM</v>
+<v>I2S_FG\PrototypingKit_FG_Test\CY8C58LP Family Datasheet</v>
+<v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides</v>
+<v>I2S_FG\PrototypingKit_FG_Test\System Reference Guides\cy_boot_v5_20</v>
+<v>I2S_FG\PrototypingKit_FG_Test\ADC_DelSig_v3_20.pdf</v>
+<v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20</v>
+<v>I2S_FG\PrototypingKit_FG_Test\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -545,31 +658,31 @@
 <CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
 <indicators>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="466" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="502" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="98" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="102" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="278" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="282" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="431" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="469" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="386" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="422" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="418" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="454" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="435" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="471" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="453" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="488" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="459" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="495" DocumentName=".\PrototypingKit_FG.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 </indicators>
 </CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>

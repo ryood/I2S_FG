@@ -7,6 +7,7 @@
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
  *
+ * 2016.03.30 UIを修正
  * 2016.03.27 ノコギリ波の出力
  * 2016.03.27 Sampling Rateを382kHzに (ダイ温度測定)
  * 2016.03.03 UIを整理
@@ -22,7 +23,10 @@
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160327")
+#define TITLE_STR2  ("20160330")
+
+// ロータリーエンコーダによる周波数増減を上位1桁または上位2桁に切り替える閾値
+#define INC_DEC_THRESHOLD   100000 
 
 // Defines for DDS
 #define SAMPLE_CLOCK    384000u
@@ -42,8 +46,8 @@
 #define MODE_NORMAL		0
 #define MODE_FREQUENCY	1
 #define MODE_WAVEFORM	2
-#define MODE_CONTRAST	3
-#define MODE_STATUS     4
+#define MODE_STATUS     3
+#define MODE_CONTRAST	4
 #define MODE_N			5
 
 #define CMD_LCD_ON  10
@@ -68,7 +72,7 @@
 #define LCD_CONTRAST_LIMIT  63
 
 #define ATTENUATE_LIMIT 8
-#define ATTENUATE_INIT 0
+#define ATTENUATE_INIT 3
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -312,22 +316,54 @@ int measureSupplyVoltage()
 void incDecFrequency(int val)
 {
 	int v, cnt, rem;
-	
+
+	// 桁数を求める。
 	v = frequency;
 	cnt = 0;
-    rem = 0;
+	rem = 0;
 	while (v) {
 		rem = v % 10;
 		v /= 10;
 		cnt++;
 	}
-	
-    v = rem + val;
-    if (v > 0) {
-	    frequency = POW10[cnt - 1] * v;
-    } else {
-        frequency = POW10[cnt - 2] * (9 + v);
-    }
+
+	v = rem + val;
+	printf("v: %d\t", v);
+	if (v > 0) {
+		frequency = POW10[cnt - 1] * v;
+	}
+	else {
+		frequency = POW10[cnt - 2] * (9 + v);
+	}
+	frequency = constrain(frequency, 1, SAMPLE_CLOCK / 2);
+}
+
+// 上位2桁を増減
+//
+void incDecFrequencyUpper2Digit(int val)
+{
+	int v, cnt, rem;
+	int upper2digit;
+
+	// 周波数が１桁の場合は最上位を増減
+	if (frequency < 10) {
+		incDecFrequency(val);
+		return;
+	}
+
+	// 桁数を求める。
+	v = frequency;
+	cnt = 0;
+	rem = 0;
+	while (v) {
+		rem = v % 10;
+		v /= 10;
+		cnt++;
+	}
+
+	upper2digit = frequency / POW10[cnt - 2];
+	v = upper2digit + val;
+	frequency = POW10[cnt - 2] * v;
 	frequency = constrain(frequency, 1, SAMPLE_CLOCK / 2);
 }
 
@@ -468,12 +504,12 @@ int main()
     		case MODE_WAVEFORM:
     			currentMode = MODE_NORMAL;
     			break;
+			case MODE_STATUS:
+    			currentMode = MODE_NORMAL;
+    			break;    
     		case MODE_CONTRAST:
     			currentMode = MODE_NORMAL;
     			break;
-            case MODE_STATUS:
-    			currentMode = MODE_NORMAL;
-    			break;    
     		}
     		isDirty = 1;
     		break;
@@ -483,14 +519,14 @@ int main()
     			currentMode = MODE_WAVEFORM;
     			break;
     		case MODE_WAVEFORM:
-    			currentMode = MODE_CONTRAST;
-    			break;
-    		case MODE_CONTRAST:
     			currentMode = MODE_STATUS;
     			break;
             case MODE_STATUS:
-                currentMode = MODE_NORMAL;
-                break;
+                currentMode = MODE_CONTRAST;
+                break;			
+    		case MODE_CONTRAST:
+    			currentMode = MODE_NORMAL;
+    			break;
     		}
     		isDirty = 1;
     		break;
@@ -519,7 +555,7 @@ int main()
     		switch (currentMode) {
     		case MODE_NORMAL:
     			// 周波数増減
-                incDecFrequency(re_v);
+                incDecFrequencyUpper2Digit(re_v);
     		    setDDSParameter_0(frequency);
                 isDirty = 1;
     			break;
@@ -541,15 +577,15 @@ int main()
     		}
     	}
     	
+        // 電源電圧測定
+        //
+        supplyVoltage = measureSupplyVoltage();
+       	// ToDo: 下限値以下に成った場合アラート。
         if (currentMode == MODE_STATUS) {
-        	// 電源電圧測定
-        	//
-        	supplyVoltage = measureSupplyVoltage();
-        	// ToDo: 下限値以下に成った場合アラート。
-        
             // ダイ温度測定
+            // 測定に時間がかかるためMODE_STATUSの場合のみ測定
             dieTempStatus = DieTemp_GetTemp(&dieTemp);
-            // ToDo: 上限値以上に成った場合アラート。
+			isDirty = 1;
         }
         	
     	// 表示文字列
@@ -570,11 +606,6 @@ int main()
     			sprintf(buff1, "WAV:%s", strWaveForm[waveForm]);
     			sprintf(buff2, "ATT:%d   ", attenuate);
     			break;
-    		case MODE_CONTRAST:
-
-    			sprintf(buff1, "CONT:%d", lcdContrast);
-                sprintf(buff2, "        ");
-    			break;
             case MODE_STATUS:
                 sprintf(buff1, "%6ldmV", supplyVoltage);
                 if (dieTempStatus == CYRET_SUCCESS) {
@@ -584,6 +615,10 @@ int main()
                     sprintf(buff2, "ST:%d", (int8)dieTempStatus);
                 }
                 break;
+    		case MODE_CONTRAST:
+    			sprintf(buff1, "CONT:%3d", lcdContrast);
+                sprintf(buff2, "        ");
+    			break;
     		}
     		
             //sprintf(buff2, "%8d", kbp);
