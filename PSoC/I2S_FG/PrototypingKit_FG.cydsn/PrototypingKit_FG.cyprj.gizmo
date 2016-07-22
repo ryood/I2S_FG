@@ -27,6 +27,7 @@
 <dep name=".\Generated_Source\PSoC5\CySpc.h" />
 <dep name=".\Generated_Source\PSoC5\DMA_0_dma.h" />
 <dep name=".\Generated_Source\PSoC5\DieTemp.h" />
+<dep name=".\Generated_Source\PSoC5\EEPROM.h" />
 <dep name=".\Generated_Source\PSoC5\I2CM_LCD.h" />
 <dep name=".\Generated_Source\PSoC5\I2CM_LCD_PVT.h" />
 <dep name=".\Generated_Source\PSoC5\I2S_1.h" />
@@ -87,6 +88,7 @@
 <file name=".\Generated_Source\PSoC5\CySpc.h" />
 <file name=".\Generated_Source\PSoC5\DMA_0_dma.h" />
 <file name=".\Generated_Source\PSoC5\DieTemp.h" />
+<file name=".\Generated_Source\PSoC5\EEPROM.h" />
 <file name=".\Generated_Source\PSoC5\I2CM_LCD.h" />
 <file name=".\Generated_Source\PSoC5\I2CM_LCD_PVT.h" />
 <file name=".\Generated_Source\PSoC5\I2S_1.h" />
@@ -131,6 +133,14 @@
 <file name=".\SPLC792-I2C.h" />
 <file name=".\main.c" />
 <file name=".\wavetable32_0_9_8192.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\cymetadata.o">
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cymetadata.c" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\cymetadata.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SPLC792-I2C.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_Supply.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_Supply_AMux.h" />
@@ -147,6 +157,7 @@
 <dep name=".\Generated_Source\PSoC5\CySpc.h" />
 <dep name=".\Generated_Source\PSoC5\DMA_0_dma.h" />
 <dep name=".\Generated_Source\PSoC5\DieTemp.h" />
+<dep name=".\Generated_Source\PSoC5\EEPROM.h" />
 <dep name=".\Generated_Source\PSoC5\I2CM_LCD.h" />
 <dep name=".\Generated_Source\PSoC5\I2CM_LCD_PVT.h" />
 <dep name=".\Generated_Source\PSoC5\I2S_1.h" />
@@ -392,6 +403,19 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\DieTemp.c" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\EEPROM.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\EEPROM.c" />
+<dep name=".\Generated_Source\PSoC5\EEPROM.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\EEPROM.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\I2CM_LCD.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -673,14 +697,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\cyfitter_cfg.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\cymetadata.o">
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cymetadata.c" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\cymetadata.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\cyutils.o">
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
@@ -796,6 +812,7 @@
 <dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_I2S.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_Debouncer_RE.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\DieTemp.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\EEPROM.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\PrototypingKit_FG.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" />
 </file>
@@ -852,12 +869,13 @@
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_Supply_Ext_CP_Clk.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_Supply_IRQ.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_Supply_theACLK.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
-<name_val_pair name="D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_FG.cydsn\CortexM3\ARM_GCC_493\Debug\PrototypingKit_FG.hex" v="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections" />
+<name_val_pair name="D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_FG.cydsn\CortexM3\ARM_GCC_493\Debug\PrototypingKit_FG.hex" v="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections" />
 <name_val_pair name=".\Generated_Source\PSoC5\Clock_I2S.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\Clock_Debouncer_RE.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\Clock_Debouncer_KeyPad.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\Pin_KeyPad_Col.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC5\DieTemp.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\Generated_Source\PSoC5\EEPROM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\gizmo\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_FG.cydsn\PrototypingKit_FG.cyprj -d CY8C5888LTI-LP097 -s D:\Users\gizmo\Documents\Develop\I2S_FG\PSoC\I2S_FG\PrototypingKit_FG.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -1815,6 +1833,11 @@
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\DieTemp_v2_0\DieTemp_v2_0.pdf</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\DieTemp_v2_0\API\DieTemp.c</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\DieTemp_v2_0\API\DieTemp.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.h</v>
 <v>.\PrototypingKit_FG.cydwr</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_20\PSoC5\API\cm3gcc.ld</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_20\PSoC5\API\Cm3RealView.scat</v>
@@ -2000,6 +2023,8 @@
 <v>.\Generated_Source\PSoC5\Pin_KeyPad_Col.h</v>
 <v>.\Generated_Source\PSoC5\DieTemp.c</v>
 <v>.\Generated_Source\PSoC5\DieTemp.h</v>
+<v>.\Generated_Source\PSoC5\EEPROM.c</v>
+<v>.\Generated_Source\PSoC5\EEPROM.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -2009,14 +2034,14 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="131035081130173475" />
+<deps_time v="131129712478335874" />
 <top_block v="TopDesign" />
 <last_generation v="4" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="131037261630137009" />
+<deps_time v="131129723366256530" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="718b6b01-68ba-4a17-b632-d38dc61ebb3b">
@@ -2029,23 +2054,30 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\System">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
-<v>Cypress Component Catalog\Digital</v>
+<v>Cypress Component Catalog\Communications</v>
 <v>Cypress Component Catalog\Digital\Utility</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
 <v>Cypress Component Catalog\System</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Cypress Component Catalog\Digital\Utility</v>
-<v>Cypress Component Catalog\Digital\Utility\Basic Counter [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Debouncer [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Digital Comparator [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Down Counter (7-bit) [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Edge Detector [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Frequency Divider [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Glitch Filter [v2.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Pulse Converter [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Sync [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\UDB Clock Enable [v1.0]</v>
+<v>Cypress Component Catalog</v>
+<v>Cypress Component Catalog\Analog</v>
+<v>Cypress Component Catalog\CapSense</v>
+<v>Cypress Component Catalog\Communications</v>
+<v>Cypress Component Catalog\Communications\CAN Controller Macro [v3.0]</v>
+<v>Cypress Component Catalog\Communications\File System</v>
+<v>Cypress Component Catalog\Communications\I2C</v>
+<v>Cypress Component Catalog\Communications\I2S</v>
+<v>Cypress Component Catalog\Communications\LIN [v3.40]</v>
+<v>Cypress Component Catalog\Communications\LIN Slave Macro [v3.40]</v>
+<v>Cypress Component Catalog\Communications\MDIO Interface</v>
+<v>Cypress Component Catalog\Communications\SMBus/PMBus Slave</v>
+<v>Cypress Component Catalog\Communications\Software Transmit UART [v1.50]</v>
+<v>Cypress Component Catalog\Communications\SPDIF Transmitter [v1.20]</v>
+<v>Cypress Component Catalog\Communications\SPI</v>
+<v>Cypress Component Catalog\Communications\UART [v2.50]</v>
+<v>Cypress Component Catalog\Communications\USB</v>
+<v>Cypress Component Catalog\Digital</v>
 <v>Cypress Component Catalog\Display</v>
 <v>Cypress Component Catalog\Filters</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
@@ -2064,12 +2096,6 @@
 <v>Cypress Component Catalog\System\EEPROM [v3.0]</v>
 <v>Cypress Component Catalog\System\Emulated EEPROM [v1.10]</v>
 <v>Cypress Component Catalog\System\External Memory Interface</v>
-<v>Cypress Component Catalog\System\Global Signal Reference [v2.0]</v>
-<v>Cypress Component Catalog\System\ILO Trim [v2.0]</v>
-<v>Cypress Component Catalog\System\Interrupt [v1.70]</v>
-<v>Cypress Component Catalog\System\RTC [v2.0]</v>
-<v>Cypress Component Catalog\System\SleepTimer [v3.20]</v>
-<v>Cypress Component Catalog\Thermal Management</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">

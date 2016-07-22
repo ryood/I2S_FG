@@ -23,14 +23,14 @@
 #define DDS_ONLY    0
 
 #define TITLE_STR1  ("I2S FG  ")
-#define TITLE_STR2  ("20160330")
+#define TITLE_STR2  ("20160714")
 
 // ロータリーエンコーダによる周波数増減を上位1桁または上位2桁に切り替える閾値
 #define INC_DEC_THRESHOLD   100000 
 
 // Defines for DDS
 #define SAMPLE_CLOCK    384000u
-#define FREQUENCY_INIT  10000
+#define FREQUENCY_INIT  1000
 
 #define TABLE_SIZE      8192
 #define BUFFER_SIZE     4     
@@ -72,7 +72,12 @@
 #define LCD_CONTRAST_LIMIT  63
 
 #define ATTENUATE_LIMIT 8
-#define ATTENUATE_INIT 3
+#define ATTENUATE_INIT 2
+
+#define USED_EEPROM_SECTOR      (1u)
+#define EEPROM_FREQUENCY        ((USED_EEPROM_SECTOR * CYDEV_EEPROM_SECTOR_SIZE) + 0x00)
+#define EEPROM_ATTENUATE        ((USED_EEPROM_SECTOR * CYDEV_EEPROM_SECTOR_SIZE) + 0x04)
+#define EEPROM_WAVEFORM         ((USED_EEPROM_SECTOR * CYDEV_EEPROM_SECTOR_SIZE) + 0x05)
 
 /* Variable declarations for DMA_0 */
 /* Move these variable declarations to the top of the function */
@@ -369,6 +374,61 @@ void incDecFrequencyUpper2Digit(int val)
 
 #endif // DDS_ONLY
 
+
+//------------------------------------------------------
+// ParameterをEEPROMに読み書き
+//
+void eepromWriteInt32(int v, uint16 address)
+{
+    EEPROM_WriteByte( v        & 0xff, address    );
+    EEPROM_WriteByte((v >>  8) & 0xff, address + 1);
+    EEPROM_WriteByte((v >> 16) & 0xff, address + 2);
+    EEPROM_WriteByte((v >> 24) & 0xff, address + 3);
+}
+
+int eepromReadInt32(uint16 address)
+{
+    int v;
+    uint8 tmp;
+
+    tmp = EEPROM_ReadByte(address);
+    v   = (int)tmp;   
+    tmp = EEPROM_ReadByte(address + 1);
+    v  |= (int)tmp << 8;
+    tmp = EEPROM_ReadByte(address + 2);
+    v  |= (int)tmp << 16;
+    tmp = EEPROM_ReadByte(address + 3);
+    v  |= (int)tmp << 24;
+
+    return v;
+}
+
+void saveParametersToEEPROM()
+{
+    eepromWriteInt32(frequency, EEPROM_FREQUENCY);
+    EEPROM_WriteByte(attenuate, EEPROM_ATTENUATE);
+    eepromWriteInt32(waveForm,  EEPROM_WAVEFORM);
+}
+
+void loadParametersFromEEPROM()
+{
+    uint8 tmp;
+    
+    LCD_SetPos(0, 0);
+    LCD_Puts("loading");
+    LCD_SetPos(0, 1);
+    LCD_Puts("EEPROM");
+    
+    tmp = EEPROM_ReadByte(EEPROM_FREQUENCY);
+    if (tmp != 0xFF) {
+        frequency = eepromReadInt32(EEPROM_FREQUENCY);
+        attenuate = EEPROM_ReadByte(EEPROM_ATTENUATE);
+        waveForm  = eepromReadInt32(EEPROM_WAVEFORM); 
+    }
+
+    CyDelay(500);
+}
+
 //------------------------------------------------------
 // メイン・ルーチン
 //
@@ -385,9 +445,6 @@ int main()
     setKeyBufferWithInt(frequency);
     attenuate = ATTENUATE_INIT;
     
-    setDDSParameter_0(frequency);
-    generateWave_0();
-    
     CyGlobalIntEnable; /* Enable global interrupts. */
 
 #if !DDS_ONLY
@@ -403,12 +460,19 @@ int main()
     CyDelay(1000);
     LCD_Clear();
     
+    // Load Prameters from EEPROM
+    EEPROM_Start();
+    loadParametersFromEEPROM();
+    
     // Init ADC
     //
     ADC_DelSig_Supply_Start();
     
 #endif // DDS_ONLY
 
+    setDDSParameter_0(frequency);
+    generateWave_0();
+    
     // Init I2S DAC
     //
     I2S_1_Start();
@@ -494,6 +558,7 @@ int main()
     		setDDSParameter_0(frequency);
     		//kbp = 0;
             LCD_SetCursor(0, 0);
+            isDirty = 1;
     		break;
     	case CMD_CANCEL:
     		switch (currentMode) {
@@ -591,6 +656,11 @@ int main()
     	// 表示文字列
     	//
     	if (((lcdStat != LCD_OFF) && isDirty) || (currentMode == MODE_FIRSTTIME)) {
+            // ParameterをEEPROMに保存
+            #if !DDS_ONLY
+            saveParametersToEEPROM();
+            #endif
+            
     		switch (currentMode) {
             case MODE_FIRSTTIME:
                  currentMode = MODE_NORMAL;
@@ -619,7 +689,7 @@ int main()
     			sprintf(buff1, "CONT:%3d", lcdContrast);
                 sprintf(buff2, "        ");
     			break;
-    		}
+        	}
     		
             //sprintf(buff2, "%8d", kbp);
     		LCD_SetPos(0, 0);
